@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>スモールエイド — 小規模事業者向け低額コンサル — 株式会社 Aid &amp; Aide</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700;900&family=Barlow+Condensed:ital,wght@0,700;0,900;1,700;1,900&family=Anton&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{--bg:#f5f3ee;--ink:#0a0a0a;--red:#d63a2f;--lime:#b8f000;--faint:#e2dfd8;--mid:#666}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--ink);font-family:'Noto Sans JP',sans-serif;overflow-x:hidden}
+nav{position:fixed;top:0;left:0;right:0;z-index:200;height:52px;background:var(--bg);border-bottom:1px solid var(--faint);display:flex;align-items:center;justify-content:space-between;padding:0 40px}
+.nl{font-family:'Barlow Condensed',sans-serif;font-style:italic;font-weight:900;font-size:19px;letter-spacing:2px;color:var(--ink);text-decoration:none;display:flex;flex-direction:column;line-height:1.1}
+.nl-sub{font-size:9px;letter-spacing:2px;color:var(--mid);font-style:normal;font-weight:700}
+.nr{display:flex;align-items:center;gap:28px}
+.nr a{font-size:10px;letter-spacing:3px;text-transform:uppercase;color:var(--mid);cursor:pointer;text-decoration:none;transition:color .15s}
+.nr a:hover{color:var(--ink)}
+.nr button{background:var(--ink);color:var(--bg);border:none;font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:11px;letter-spacing:2px;text-transform:uppercase;padding:8px 18px;cursor:pointer;transition:background .2s}
+.nr button:hover{background:var(--red)}
+/* HERO */
+.sv-hero{padding-top:52px;border-bottom:1.5px solid var(--ink);background:var(--ink);min-height:320px;display:flex;flex-direction:column;justify-content:flex-end}
+.sv-hero-meta{padding:10px 40px;display:flex;justify-content:space-between;font-size:10px;letter-spacing:2px;color:#555;text-transform:uppercase;border-bottom:1px solid #1a1a1a}
+.sv-hero-body{padding:48px 52px;display:grid;grid-template-columns:1fr 380px;gap:48px;align-items:end}
+.sv-eyebrow{font-size:9px;letter-spacing:4px;text-transform:uppercase;color:#555;margin-bottom:16px;display:flex;align-items:center;gap:10px}
+.sv-eyebrow::before{content:'';width:20px;height:1px;background:#555}
+.sv-big{font-family:'Barlow Condensed',sans-serif;font-style:italic;font-weight:900;font-size:clamp(56px,9vw,120px);line-height:.86;letter-spacing:-3px;color:#fff}
+.sv-big .r{color:var(--red)}
+.sv-big .out{color:transparent;-webkit-text-stroke:1.5px rgba(255,255,255,.3)}
+.sv-tagline{font-size:14px;color:#888;line-height:1.9;border-left:2px solid #333;padding-left:18px}
+.sv-cta-wrap{display:flex;flex-direction:column;gap:12px;padding-bottom:4px}
+.sv-cta{background:var(--lime);color:var(--ink);border:none;font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:14px;letter-spacing:2px;text-transform:uppercase;padding:16px 32px;cursor:pointer;text-decoration:none;display:inline-block;text-align:center}
+.sv-cta:hover{background:#fff}
+.sv-price-preview{font-size:11px;color:#555;letter-spacing:1px}
+/* BREADCRUMB */
+.breadcrumb{padding:16px 52px;font-size:10px;letter-spacing:2px;color:var(--mid);border-bottom:1px solid var(--faint);display:flex;align-items:center;gap:8px}
+.breadcrumb a{color:var(--mid);text-decoration:none}
+.breadcrumb a:hover{color:var(--ink)}
+/* SECTIONS */
+.sec{padding:80px 52px;border-bottom:1.5px solid var(--ink)}
+.sec-sm{padding:64px 52px;border-bottom:1.5px solid var(--ink)}
+.eyebrow{font-size:9px;letter-spacing:4px;text-transform:uppercase;color:var(--mid);margin-bottom:28px;display:flex;align-items:center;gap:10px}
+.eyebrow::before{content:'';width:20px;height:1px;background:var(--mid)}
+.bighead{font-family:'Barlow Condensed',sans-serif;font-style:italic;font-weight:900;font-size:clamp(44px,6vw,76px);line-height:.88;letter-spacing:-1px;margin-bottom:32px}
+.bighead .out{color:transparent;-webkit-text-stroke:1.5px var(--ink)}
+.lime{background:var(--lime);color:var(--ink);padding:2px 10px;display:inline-block}
+/* PROBLEM */
+.problem-grid{display:grid;grid-template-columns:1fr 1fr;border:1px solid var(--faint)}
+.prob-item{padding:28px 32px;border-right:1px solid var(--faint);border-bottom:1px solid var(--faint);display:flex;align-items:baseline;gap:16px;transition:all .15s}
+.prob-item:hover{background:var(--ink);color:var(--bg)}
+.prob-n{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:13px;letter-spacing:2px;color:var(--faint);min-width:24px;transition:color .15s}
+.prob-item:hover .prob-n{color:var(--red)}
+.prob-t{font-size:14px;line-height:1.7}
+/* FEATURES */
+.feat-grid{display:grid;grid-template-columns:repeat(3,1fr);border:1px solid var(--faint)}
+.feat{padding:36px 32px;border-right:1px solid var(--faint);transition:all .2s}
+.feat:last-child{border-right:none}
+.feat:hover{background:var(--ink)}
+.feat:hover .feat-n,.feat:hover .feat-title,.feat:hover .feat-desc{color:var(--bg)}
+.feat-n{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:11px;letter-spacing:3px;color:var(--faint);margin-bottom:12px;transition:color .2s;text-transform:uppercase}
+.feat-title{font-size:15px;font-weight:700;margin-bottom:10px;transition:color .2s}
+.feat-desc{font-size:12px;color:var(--mid);line-height:1.85;transition:color .2s}
+/* FLOW */
+.flow-grid{display:grid;grid-template-columns:repeat(4,1fr);border:1px solid var(--faint)}
+.flow-item{padding:32px 28px;border-right:1px solid var(--faint)}
+.flow-item:last-child{border-right:none}
+.flow-n{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:52px;color:var(--faint);line-height:1;margin-bottom:16px}
+.flow-t{font-size:14px;font-weight:700;margin-bottom:8px}
+.flow-d{font-size:12px;color:var(--mid);line-height:1.8}
+/* PRICE */
+.price-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:0;border:1px solid var(--faint)}
+.price-card{padding:40px 36px;border-right:1px solid var(--faint);position:relative}
+.price-card:last-child{border-right:none}
+.price-card.featured{background:var(--ink)}
+.price-card.featured .pc-name,.price-card.featured .pc-price,.price-card.featured .pc-unit,.price-card.featured .pc-desc,.price-card.featured .pc-item{color:var(--bg)}
+.price-card.featured .pc-badge{background:var(--lime);color:var(--ink)}
+.pc-badge{display:inline-block;font-size:9px;letter-spacing:3px;text-transform:uppercase;padding:4px 10px;background:var(--faint);color:var(--mid);margin-bottom:20px;font-family:'Barlow Condensed',sans-serif;font-weight:700}
+.pc-name{font-family:'Barlow Condensed',sans-serif;font-style:italic;font-weight:900;font-size:28px;letter-spacing:1px;margin-bottom:8px}
+.pc-price{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:clamp(36px,4vw,52px);line-height:1;letter-spacing:-1px}
+.pc-unit{font-size:13px;color:var(--mid);margin-bottom:8px}
+.pc-sub{font-size:11px;color:var(--mid);margin-bottom:20px}
+.pc-divider{width:32px;height:2px;background:var(--red);margin-bottom:20px}
+.pc-items{display:flex;flex-direction:column;gap:8px;margin-bottom:28px}
+.pc-item{font-size:12px;color:var(--mid);line-height:1.7;display:flex;align-items:baseline;gap:8px}
+.pc-item::before{content:'—';color:var(--faint);flex-shrink:0}
+.pc-desc{font-size:11px;color:var(--mid);line-height:1.7;margin-top:16px;padding-top:16px;border-top:1px solid var(--faint)}
+/* RESULT */
+.result-bar{background:var(--ink);padding:20px 28px;display:flex;align-items:center;gap:20px}
+.result-num{font-family:'Barlow Condensed',sans-serif;font-style:italic;font-weight:900;font-size:44px;color:var(--lime);line-height:1;white-space:nowrap}
+.result-text{font-size:12px;color:#aaa;line-height:1.8}
+.result-text strong{color:#fff}
+/* FAQ */
+.faq-list{display:flex;flex-direction:column}
+.faq-item{border-bottom:1px solid var(--faint);padding:28px 0}
+.faq-q{font-size:14px;font-weight:700;color:var(--ink);margin-bottom:12px;display:flex;align-items:baseline;gap:12px}
+.faq-q::before{content:'Q.';font-family:'Barlow Condensed',sans-serif;font-style:italic;font-weight:900;font-size:18px;color:var(--red);flex-shrink:0}
+.faq-a{font-size:13px;color:var(--mid);line-height:1.9;padding-left:32px}
+/* CTA */
+.cta-section{background:var(--ink);padding:80px 52px;display:grid;grid-template-columns:1fr 1fr;gap:72px;align-items:center}
+.cta-big{font-family:'Barlow Condensed',sans-serif;font-style:italic;font-weight:900;font-size:clamp(56px,8vw,100px);line-height:.84;letter-spacing:-2px;color:#fff}
+.cta-big .s{color:transparent;-webkit-text-stroke:1.5px rgba(255,255,255,.25)}
+.cta-r{display:flex;flex-direction:column;gap:24px}
+.cta-sub{font-size:14px;color:#888;line-height:1.9}
+.cta-btn{background:var(--lime);color:var(--ink);border:none;font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:15px;letter-spacing:3px;text-transform:uppercase;padding:18px 0;cursor:pointer;width:100%;text-align:center;display:block;text-decoration:none}
+.cta-btn:hover{background:#fff}
+.cta-free{font-size:10px;color:#444;letter-spacing:1px;text-align:center}
+/* FOOTER */
+footer{background:var(--ink);border-top:1px solid #1a1a1a;padding:24px 40px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px}
+.fl{font-family:'Barlow Condensed',sans-serif;font-style:italic;font-weight:900;font-size:17px;letter-spacing:2px;color:#fff}
+.fl-r{color:var(--red)}
+.fc{font-size:10px;color:#333;letter-spacing:1px}
+/* TICKER */
+.ticker{background:var(--ink);padding:13px 0;overflow:hidden;white-space:nowrap;border-bottom:1.5px solid var(--ink)}
+.ticker-i{display:inline-block;animation:tick 24s linear infinite}
+.ticker-i span{font-family:'Barlow Condensed',sans-serif;font-style:italic;font-weight:900;font-size:18px;letter-spacing:4px;text-transform:uppercase;color:var(--bg);margin:0 32px}
+.ticker-i .x{color:var(--red);font-style:normal;margin:0 6px}
+@keyframes tick{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+/* TWO-COL */
+.two-col{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:start}
+.two-col-r{border-left:1px solid var(--faint);padding-left:48px}
+/* TABLE */
+.data-table{width:100%;border-collapse:collapse;margin-top:24px}
+.data-table th{font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--mid);padding:12px 16px;border-bottom:1.5px solid var(--ink);text-align:left;font-weight:700}
+.data-table td{font-size:13px;padding:14px 16px;border-bottom:1px solid var(--faint);color:var(--ink);line-height:1.7}
+.data-table tr:last-child td{border-bottom:none}
+.tag{font-family:'Barlow Condensed',sans-serif;font-size:10px;letter-spacing:2px;text-transform:uppercase;border:1px solid var(--faint);padding:3px 8px;color:var(--mid);display:inline-block}
+/* RESPONSIVE */
+@media(max-width:900px){
+  nav{padding:0 20px}
+  .sv-hero-body{grid-template-columns:1fr;padding:40px 24px}
+  .breadcrumb,.sec,.sec-sm{padding-left:24px;padding-right:24px}
+  .problem-grid,.feat-grid,.flow-grid,.price-grid{grid-template-columns:1fr}
+  .prob-item,.feat,.flow-item,.price-card{border-right:none}
+  .two-col{grid-template-columns:1fr}
+  .two-col-r{border-left:none;padding-left:0;border-top:1px solid var(--faint);padding-top:32px}
+  .cta-section{grid-template-columns:1fr;padding:60px 24px;gap:40px}
+  footer{padding:20px 24px}
+}
+</style>
+</head>
+<body>
+<nav>
+  <a class="nl" href="index.html">
+    <span>AID<span style="color:var(--red)">&</span>AIDE</span>
+    <span class="nl-sub">株式会社 Aid &amp; Aide</span>
+  </a>
+  <div class="nr">
+    <a href="index.html#results">実績</a>
+    <a href="index.html#sv">サービス</a>
+    <a href="index.html#contact">お問い合わせ</a>
+    <button onclick="location.href='index.html#contact'">FREE CONSULT →</button>
+  </div>
+</nav>
+
+<div class="sv-hero">
+  <div class="sv-hero-meta"><span>Aid &amp; Aide — サービス詳細</span><span>Small Aid / 小規模事業者向け</span></div>
+  <div class="sv-hero-body">
+    <div>
+      <div class="sv-eyebrow">Service 05</div>
+      <div class="sv-big"><div>SMALL</div><div class="r">AID.</div></div>
+    </div>
+    <div>
+      <p class="sv-tagline">「お金がない」は集客をやめる理由にはなりません。月5,000円から始められる、飲食・カフェ・パーソナルジム向けのWebマーケ伴走プランです。</p>
+      <div class="sv-cta-wrap" style="margin-top:24px">
+        <a class="sv-cta" href="index.html#contact">無料相談を申し込む →</a>
+        <p class="sv-price-preview">月額 5,000円〜（ツール費用なし・コンサルのみ）</p>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="breadcrumb"><a href="index.html">HOME</a> <span>›</span> <a href="index.html#sv">サービス</a> <span>›</span> <span>スモールエイド</span></div>
+
+<section class="sec">
+  <div class="eyebrow">For whom</div>
+  <div class="bighead"><div>こんな方のための</div><div><span class="lime">プランです</span></div></div>
+  <div class="problem-grid">
+    <div class="prob-item"><span class="prob-n">01</span><span class="prob-t">飲食店・カフェを一人または少人数で経営している</span></div>
+    <div class="prob-item"><span class="prob-n">02</span><span class="prob-t">パーソナルジム・サロンなどの個人事業主</span></div>
+    <div class="prob-item"><span class="prob-n">03</span><span class="prob-t">集客に困っているがツール導入の予算がない</span></div>
+    <div class="prob-item"><span class="prob-n">04</span><span class="prob-t">SNSやGoogleマップを整えたいが何から始めればいいかわからない</span></div>
+    <div class="prob-item"><span class="prob-n">05</span><span class="prob-t">月数万円の高額サービスには手が出ない</span></div>
+    <div class="prob-item" style="border-right:none"><span class="prob-n">06</span><span class="prob-t">将来的にはしっかりした集客の仕組みを作りたい</span></div>
+  </div>
+</section>
+
+<section class="sec" style="background:var(--ink)">
+  <div class="two-col">
+    <div>
+      <div class="bighead" style="color:#fff"><div>月<span style="color:var(--lime)">5,000</span>円で</div><div style="color:#fff">何ができるか。</div></div>
+      <p style="font-size:13px;color:#888;line-height:1.95;max-width:440px">ツールは提供しません。代わりにあなたが「やるだけ」の状態を毎月作ります。文章・返信・投稿のネタを届けることで、忙しいオーナーでも無理なく続けられる集客習慣を作ります。</p>
+    </div>
+    <div style="border-left:1px solid #222;padding-left:48px">
+      <div style="display:flex;flex-direction:column;gap:20px">
+        <div style="padding:20px 24px;border:1px solid #1a1a1a">
+          <div style="font-size:9px;letter-spacing:3px;color:#555;margin-bottom:8px;text-transform:uppercase">毎月届くもの</div>
+          <div style="font-size:13px;color:#aaa;line-height:2">📍 Googleマップ口コミ返信文（月4件まで）<br>📱 SNS投稿文案（月2〜4本分）<br>💬 LINE配信テキスト（月2回分）<br>❓ チャット相談し放題</div>
+        </div>
+        <div style="padding:20px 24px;border:1px solid var(--lime)">
+          <div style="font-size:9px;letter-spacing:3px;color:var(--lime);margin-bottom:8px;text-transform:uppercase">あなたがやること</div>
+          <div style="font-size:13px;color:#aaa;line-height:2">📸 写真を撮って投稿するだけ<br>📋 届いた文章をコピペするだけ<br>⭐ QRコードをお客様に見せるだけ</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="sec-sm">
+  <div class="eyebrow">Price</div>
+  <div class="bighead">料金プラン</div>
+  <div class="price-grid">
+    <div class="price-card">
+      <span class="pc-badge">ミニマムプラン</span>
+      <div class="pc-name">まず始める</div>
+      <div class="pc-price">¥5,000</div>
+      <div class="pc-unit">月額（税別）/ 初期費用なし</div>
+      <div class="pc-sub">縛りなし・翌月解約OK</div>
+      <div class="pc-divider"></div>
+      <div class="pc-items">
+        <div class="pc-item">Googleマップ口コミ返信文（月2件）</div>
+        <div class="pc-item">SNS投稿文案（月2本）</div>
+        <div class="pc-item">チャット相談（月2回まで）</div>
+      </div>
+    </div>
+    <div class="price-card featured">
+      <span class="pc-badge">おすすめ</span>
+      <div class="pc-name">スタンダードプラン</div>
+      <div class="pc-price">¥10,000</div>
+      <div class="pc-unit">月額（税別）/ 初期費用なし</div>
+      <div class="pc-sub">縛りなし・翌月解約OK</div>
+      <div class="pc-divider"></div>
+      <div class="pc-items">
+        <div class="pc-item">Googleマップ口コミ返信文（月4件）</div>
+        <div class="pc-item">SNS投稿文案（月4本）</div>
+        <div class="pc-item">LINE配信テキスト（月2回分）</div>
+        <div class="pc-item">チャット相談し放題</div>
+        <div class="pc-item">月1回30分のオンライン相談</div>
+      </div>
+    </div>
+    <div class="price-card">
+      <span class="pc-badge">ステップアップ</span>
+      <div class="pc-name">成長プラン</div>
+      <div class="pc-price">¥30,000</div>
+      <div class="pc-unit">月額（税別）/ 初期費用なし</div>
+      <div class="pc-sub">本格サービスへの橋渡し</div>
+      <div class="pc-divider"></div>
+      <div class="pc-items">
+        <div class="pc-item">スタンダードの全内容</div>
+        <div class="pc-item">Googleマップ初期整備サポート</div>
+        <div class="pc-item">月1回60分のオンライン相談</div>
+        <div class="pc-item">マップエイド・グラムエイドへの移行サポート</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="sec">
+  <div class="eyebrow">Flow</div>
+  <div class="bighead"><div>始めるのは</div><div><span class="lime">今日から</span></div></div>
+  <div class="flow-grid">
+    <div class="flow-item"><div class="flow-n">01</div><div class="flow-t">無料相談（10分〜）</div><div class="flow-d">現状のお悩みをLINEやZoomで簡単にヒアリング。10分でも十分です。</div></div>
+    <div class="flow-item"><div class="flow-n">02</div><div class="flow-t">プラン選択・スタート</div><div class="flow-d">初期費用なし・縛りなし。翌月からすぐに毎月のコンテンツが届きます。</div></div>
+    <div class="flow-item"><div class="flow-n">03</div><div class="flow-t">届いた文章を使うだけ</div><div class="flow-d">口コミ返信・投稿文・LINE配信文をコピペするだけ。難しい操作は一切不要。</div></div>
+    <div class="flow-item"><div class="flow-n">04</div><div class="flow-t">成果が出たら本格化</div><div class="flow-d">集客が安定してきたら、マップエイドやグラムエイドへのステップアップも相談できます。</div></div>
+  </div>
+</section>
+
+<section class="sec-sm">
+  <div class="eyebrow">FAQ</div>
+  <div class="bighead">よくある<br>ご質問</div>
+  <div class="faq-list">
+    <div class="faq-item"><div class="faq-q">本当に月5,000円で大丈夫ですか？</div><div class="faq-a">はい。ツールや高額システムは使いません。その代わりに「あなたが今すぐ使える文章とアドバイス」を毎月届けます。小さく始めて、成果が出てから拡張していく設計です。</div></div>
+    <div class="faq-item"><div class="faq-q">ITが苦手でも使えますか？</div><div class="faq-a">もちろんです。スマホで文章をコピペするだけ、QRコードをお客様に見せるだけ。難しい設定や操作は一切ありません。</div></div>
+    <div class="faq-item"><div class="faq-q">いつでも解約できますか？</div><div class="faq-a">はい。縛りなし・翌月解約OK。気軽に始めて、必要に応じて継続・アップグレードしてください。</div></div>
+  </div>
+</section>
+<section class="cta-section">
+  <div class="cta-big"><div>SMALL</div><div>START,</div><div class="s">BIG.</div></div>
+  <div class="cta-r">
+    <p class="cta-sub">小さく始めることが大切です。月5,000円からでも、続けることで集客は必ず変わります。まずお気軽にご相談ください。</p>
+    <a class="cta-btn" href="index.html#contact">無料相談を申し込む →</a>
+    <div class="cta-free">初回相談 <strong>完全無料</strong> / 約30分〜OK</div>
+  </div>
+</section>
+
+<div class="ticker">
+  <div class="ticker-i">
+    <span>マップエイド</span><span class="x">×</span><span>ラインエイド</span><span class="x">×</span><span>グラムエイド</span><span class="x">×</span><span>ウェブエイド</span><span class="x">×</span><span>スモールエイド</span><span class="x">×</span><span>ビズエイド</span><span class="x">×</span><span>現場で動く</span><span class="x">×</span><span>一緒に伴走</span><span class="x">×</span>
+    <span>マップエイド</span><span class="x">×</span><span>ラインエイド</span><span class="x">×</span><span>グラムエイド</span><span class="x">×</span><span>ウェブエイド</span><span class="x">×</span><span>スモールエイド</span><span class="x">×</span><span>ビズエイド</span><span class="x">×</span><span>現場で動く</span><span class="x">×</span><span>一緒に伴走</span><span class="x">×</span>
+  </div>
+</div>
+<footer>
+  <div class="fl">AID<span class="fl-r">&</span>AIDE <span style="font-family:'Noto Sans JP';font-size:11px;color:#444;font-weight:400;letter-spacing:1px">株式会社 Aid &amp; Aide</span></div>
+  <div class="fc">© 2025-2026 Aid &amp; Aide Co., Ltd. All rights reserved.</div>
+</footer>
+</body>
+</html>

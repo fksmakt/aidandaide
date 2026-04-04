@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>ウェブエイド — ホームページ制作 — 株式会社 Aid &amp; Aide</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700;900&family=Barlow+Condensed:ital,wght@0,700;0,900;1,700;1,900&family=Anton&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{--bg:#f5f3ee;--ink:#0a0a0a;--red:#d63a2f;--lime:#b8f000;--faint:#e2dfd8;--mid:#666}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--ink);font-family:'Noto Sans JP',sans-serif;overflow-x:hidden}
+nav{position:fixed;top:0;left:0;right:0;z-index:200;height:52px;background:var(--bg);border-bottom:1px solid var(--faint);display:flex;align-items:center;justify-content:space-between;padding:0 40px}
+.nl{font-family:'Barlow Condensed',sans-serif;font-style:italic;font-weight:900;font-size:19px;letter-spacing:2px;color:var(--ink);text-decoration:none;display:flex;flex-direction:column;line-height:1.1}
+.nl-sub{font-size:9px;letter-spacing:2px;color:var(--mid);font-style:normal;font-weight:700}
+.nr{display:flex;align-items:center;gap:28px}
+.nr a{font-size:10px;letter-spacing:3px;text-transform:uppercase;color:var(--mid);cursor:pointer;text-decoration:none;transition:color .15s}
+.nr a:hover{color:var(--ink)}
+.nr button{background:var(--ink);color:var(--bg);border:none;font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:11px;letter-spacing:2px;text-transform:uppercase;padding:8px 18px;cursor:pointer;transition:background .2s}
+.nr button:hover{background:var(--red)}
+/* HERO */
+.sv-hero{padding-top:52px;border-bottom:1.5px solid var(--ink);background:var(--ink);min-height:320px;display:flex;flex-direction:column;justify-content:flex-end}
+.sv-hero-meta{padding:10px 40px;display:flex;justify-content:space-between;font-size:10px;letter-spacing:2px;color:#555;text-transform:uppercase;border-bottom:1px solid #1a1a1a}
+.sv-hero-body{padding:48px 52px;display:grid;grid-template-columns:1fr 380px;gap:48px;align-items:end}
+.sv-eyebrow{font-size:9px;letter-spacing:4px;text-transform:uppercase;color:#555;margin-bottom:16px;display:flex;align-items:center;gap:10px}
+.sv-eyebrow::before{content:'';width:20px;height:1px;background:#555}
+.sv-big{font-family:'Barlow Condensed',sans-serif;font-style:italic;font-weight:900;font-size:clamp(56px,9vw,120px);line-height:.86;letter-spacing:-3px;color:#fff}
+.sv-big .r{color:var(--red)}
+.sv-big .out{color:transparent;-webkit-text-stroke:1.5px rgba(255,255,255,.3)}
+.sv-tagline{font-size:14px;color:#888;line-height:1.9;border-left:2px solid #333;padding-left:18px}
+.sv-cta-wrap{display:flex;flex-direction:column;gap:12px;padding-bottom:4px}
+.sv-cta{background:var(--lime);color:var(--ink);border:none;font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:14px;letter-spacing:2px;text-transform:uppercase;padding:16px 32px;cursor:pointer;text-decoration:none;display:inline-block;text-align:center}
+.sv-cta:hover{background:#fff}
+.sv-price-preview{font-size:11px;color:#555;letter-spacing:1px}
+/* BREADCRUMB */
+.breadcrumb{padding:16px 52px;font-size:10px;letter-spacing:2px;color:var(--mid);border-bottom:1px solid var(--faint);display:flex;align-items:center;gap:8px}
+.breadcrumb a{color:var(--mid);text-decoration:none}
+.breadcrumb a:hover{color:var(--ink)}
+/* SECTIONS */
+.sec{padding:80px 52px;border-bottom:1.5px solid var(--ink)}
+.sec-sm{padding:64px 52px;border-bottom:1.5px solid var(--ink)}
+.eyebrow{font-size:9px;letter-spacing:4px;text-transform:uppercase;color:var(--mid);margin-bottom:28px;display:flex;align-items:center;gap:10px}
+.eyebrow::before{content:'';width:20px;height:1px;background:var(--mid)}
+.bighead{font-family:'Barlow Condensed',sans-serif;font-style:italic;font-weight:900;font-size:clamp(44px,6vw,76px);line-height:.88;letter-spacing:-1px;margin-bottom:32px}
+.bighead .out{color:transparent;-webkit-text-stroke:1.5px var(--ink)}
+.lime{background:var(--lime);color:var(--ink);padding:2px 10px;display:inline-block}
+/* PROBLEM */
+.problem-grid{display:grid;grid-template-columns:1fr 1fr;border:1px solid var(--faint)}
+.prob-item{padding:28px 32px;border-right:1px solid var(--faint);border-bottom:1px solid var(--faint);display:flex;align-items:baseline;gap:16px;transition:all .15s}
+.prob-item:hover{background:var(--ink);color:var(--bg)}
+.prob-n{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:13px;letter-spacing:2px;color:var(--faint);min-width:24px;transition:color .15s}
+.prob-item:hover .prob-n{color:var(--red)}
+.prob-t{font-size:14px;line-height:1.7}
+/* FEATURES */
+.feat-grid{display:grid;grid-template-columns:repeat(3,1fr);border:1px solid var(--faint)}
+.feat{padding:36px 32px;border-right:1px solid var(--faint);transition:all .2s}
+.feat:last-child{border-right:none}
+.feat:hover{background:var(--ink)}
+.feat:hover .feat-n,.feat:hover .feat-title,.feat:hover .feat-desc{color:var(--bg)}
+.feat-n{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:11px;letter-spacing:3px;color:var(--faint);margin-bottom:12px;transition:color .2s;text-transform:uppercase}
+.feat-title{font-size:15px;font-weight:700;margin-bottom:10px;transition:color .2s}
+.feat-desc{font-size:12px;color:var(--mid);line-height:1.85;transition:color .2s}
+/* FLOW */
+.flow-grid{display:grid;grid-template-columns:repeat(4,1fr);border:1px solid var(--faint)}
+.flow-item{padding:32px 28px;border-right:1px solid var(--faint)}
+.flow-item:last-child{border-right:none}
+.flow-n{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:52px;color:var(--faint);line-height:1;margin-bottom:16px}
+.flow-t{font-size:14px;font-weight:700;margin-bottom:8px}
+.flow-d{font-size:12px;color:var(--mid);line-height:1.8}
+/* PRICE */
+.price-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:0;border:1px solid var(--faint)}
+.price-card{padding:40px 36px;border-right:1px solid var(--faint);position:relative}
+.price-card:last-child{border-right:none}
+.price-card.featured{background:var(--ink)}
+.price-card.featured .pc-name,.price-card.featured .pc-price,.price-card.featured .pc-unit,.price-card.featured .pc-desc,.price-card.featured .pc-item{color:var(--bg)}
+.price-card.featured .pc-badge{background:var(--lime);color:var(--ink)}
+.pc-badge{display:inline-block;font-size:9px;letter-spacing:3px;text-transform:uppercase;padding:4px 10px;background:var(--faint);color:var(--mid);margin-bottom:20px;font-family:'Barlow Condensed',sans-serif;font-weight:700}
+.pc-name{font-family:'Barlow Condensed',sans-serif;font-style:italic;font-weight:900;font-size:28px;letter-spacing:1px;margin-bottom:8px}
+.pc-price{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:clamp(36px,4vw,52px);line-height:1;letter-spacing:-1px}
+.pc-unit{font-size:13px;color:var(--mid);margin-bottom:8px}
+.pc-sub{font-size:11px;color:var(--mid);margin-bottom:20px}
+.pc-divider{width:32px;height:2px;background:var(--red);margin-bottom:20px}
+.pc-items{display:flex;flex-direction:column;gap:8px;margin-bottom:28px}
+.pc-item{font-size:12px;color:var(--mid);line-height:1.7;display:flex;align-items:baseline;gap:8px}
+.pc-item::before{content:'—';color:var(--faint);flex-shrink:0}
+.pc-desc{font-size:11px;color:var(--mid);line-height:1.7;margin-top:16px;padding-top:16px;border-top:1px solid var(--faint)}
+/* RESULT */
+.result-bar{background:var(--ink);padding:20px 28px;display:flex;align-items:center;gap:20px}
+.result-num{font-family:'Barlow Condensed',sans-serif;font-style:italic;font-weight:900;font-size:44px;color:var(--lime);line-height:1;white-space:nowrap}
+.result-text{font-size:12px;color:#aaa;line-height:1.8}
+.result-text strong{color:#fff}
+/* FAQ */
+.faq-list{display:flex;flex-direction:column}
+.faq-item{border-bottom:1px solid var(--faint);padding:28px 0}
+.faq-q{font-size:14px;font-weight:700;color:var(--ink);margin-bottom:12px;display:flex;align-items:baseline;gap:12px}
+.faq-q::before{content:'Q.';font-family:'Barlow Condensed',sans-serif;font-style:italic;font-weight:900;font-size:18px;color:var(--red);flex-shrink:0}
+.faq-a{font-size:13px;color:var(--mid);line-height:1.9;padding-left:32px}
+/* CTA */
+.cta-section{background:var(--ink);padding:80px 52px;display:grid;grid-template-columns:1fr 1fr;gap:72px;align-items:center}
+.cta-big{font-family:'Barlow Condensed',sans-serif;font-style:italic;font-weight:900;font-size:clamp(56px,8vw,100px);line-height:.84;letter-spacing:-2px;color:#fff}
+.cta-big .s{color:transparent;-webkit-text-stroke:1.5px rgba(255,255,255,.25)}
+.cta-r{display:flex;flex-direction:column;gap:24px}
+.cta-sub{font-size:14px;color:#888;line-height:1.9}
+.cta-btn{background:var(--lime);color:var(--ink);border:none;font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:15px;letter-spacing:3px;text-transform:uppercase;padding:18px 0;cursor:pointer;width:100%;text-align:center;display:block;text-decoration:none}
+.cta-btn:hover{background:#fff}
+.cta-free{font-size:10px;color:#444;letter-spacing:1px;text-align:center}
+/* FOOTER */
+footer{background:var(--ink);border-top:1px solid #1a1a1a;padding:24px 40px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px}
+.fl{font-family:'Barlow Condensed',sans-serif;font-style:italic;font-weight:900;font-size:17px;letter-spacing:2px;color:#fff}
+.fl-r{color:var(--red)}
+.fc{font-size:10px;color:#333;letter-spacing:1px}
+/* TICKER */
+.ticker{background:var(--ink);padding:13px 0;overflow:hidden;white-space:nowrap;border-bottom:1.5px solid var(--ink)}
+.ticker-i{display:inline-block;animation:tick 24s linear infinite}
+.ticker-i span{font-family:'Barlow Condensed',sans-serif;font-style:italic;font-weight:900;font-size:18px;letter-spacing:4px;text-transform:uppercase;color:var(--bg);margin:0 32px}
+.ticker-i .x{color:var(--red);font-style:normal;margin:0 6px}
+@keyframes tick{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+/* TWO-COL */
+.two-col{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:start}
+.two-col-r{border-left:1px solid var(--faint);padding-left:48px}
+/* TABLE */
+.data-table{width:100%;border-collapse:collapse;margin-top:24px}
+.data-table th{font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--mid);padding:12px 16px;border-bottom:1.5px solid var(--ink);text-align:left;font-weight:700}
+.data-table td{font-size:13px;padding:14px 16px;border-bottom:1px solid var(--faint);color:var(--ink);line-height:1.7}
+.data-table tr:last-child td{border-bottom:none}
+.tag{font-family:'Barlow Condensed',sans-serif;font-size:10px;letter-spacing:2px;text-transform:uppercase;border:1px solid var(--faint);padding:3px 8px;color:var(--mid);display:inline-block}
+/* RESPONSIVE */
+@media(max-width:900px){
+  nav{padding:0 20px}
+  .sv-hero-body{grid-template-columns:1fr;padding:40px 24px}
+  .breadcrumb,.sec,.sec-sm{padding-left:24px;padding-right:24px}
+  .problem-grid,.feat-grid,.flow-grid,.price-grid{grid-template-columns:1fr}
+  .prob-item,.feat,.flow-item,.price-card{border-right:none}
+  .two-col{grid-template-columns:1fr}
+  .two-col-r{border-left:none;padding-left:0;border-top:1px solid var(--faint);padding-top:32px}
+  .cta-section{grid-template-columns:1fr;padding:60px 24px;gap:40px}
+  footer{padding:20px 24px}
+}
+</style>
+</head>
+<body>
+<nav>
+  <a class="nl" href="index.html">
+    <span>AID<span style="color:var(--red)">&</span>AIDE</span>
+    <span class="nl-sub">株式会社 Aid &amp; Aide</span>
+  </a>
+  <div class="nr">
+    <a href="index.html#results">実績</a>
+    <a href="index.html#sv">サービス</a>
+    <a href="index.html#contact">お問い合わせ</a>
+    <button onclick="location.href='index.html#contact'">FREE CONSULT →</button>
+  </div>
+</nav>
+
+<div class="sv-hero">
+  <div class="sv-hero-meta"><span>Aid &amp; Aide — サービス詳細</span><span>Web Aid / HP制作</span></div>
+  <div class="sv-hero-body">
+    <div>
+      <div class="sv-eyebrow">Service 04</div>
+      <div class="sv-big"><div>WEB</div><div class="r">AID.</div></div>
+    </div>
+    <div>
+      <p class="sv-tagline">「見ていただく・デザイン・情報設計・問い合わせの仕組み」この4つが揃って初めてホームページは機能します。3プランから選べる、集客に直結するHP制作。</p>
+      <div class="sv-cta-wrap" style="margin-top:24px">
+        <a class="sv-cta" href="index.html#contact">無料相談を申し込む →</a>
+        <p class="sv-price-preview">シンプルプラン 初期 20万円〜 / セミオーダー 初期 40万円〜 / プレミアム 初期 100万円〜（税別）</p>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="breadcrumb"><a href="index.html">HOME</a> <span>›</span> <a href="index.html#sv">サービス</a> <span>›</span> <span>ウェブエイド</span></div>
+
+<section class="sec">
+  <div class="eyebrow">Problem</div>
+  <div class="bighead"><div>こんなお悩み</div><div class="out">ありませんか？</div></div>
+  <div class="problem-grid">
+    <div class="prob-item"><span class="prob-n">01</span><span class="prob-t">ホームページがなく、信頼感が出せていない</span></div>
+    <div class="prob-item"><span class="prob-n">02</span><span class="prob-t">古いHPがあるがデザインが古く恥ずかしい</span></div>
+    <div class="prob-item"><span class="prob-n">03</span><span class="prob-t">HPはあるが問い合わせが来ない</span></div>
+    <div class="prob-item"><span class="prob-n">04</span><span class="prob-t">制作費が高すぎて踏み出せない</span></div>
+    <div class="prob-item"><span class="prob-n">05</span><span class="prob-t">自分でWordPressをいじれず更新できていない</span></div>
+    <div class="prob-item" style="border-right:none"><span class="prob-n">06</span><span class="prob-t">スマホで見ると崩れる・表示が遅い</span></div>
+  </div>
+</section>
+
+<section class="sec-sm">
+  <div class="eyebrow">Price</div>
+  <div class="bighead">料金プラン</div>
+  <div class="price-grid">
+    <div class="price-card">
+      <span class="pc-badge">シンプルプラン</span>
+      <div class="pc-name">まず持ちたい方へ</div>
+      <div class="pc-price">¥200,000<span style="font-size:16px">〜</span></div>
+      <div class="pc-unit">初期費用（税別）</div>
+      <div class="pc-sub">月額 20,000円〜（税別）</div>
+      <div class="pc-divider"></div>
+      <div class="pc-items">
+        <div class="pc-item">トップページ＋ブログ一覧・詳細</div>
+        <div class="pc-item">豊富なデザインテンプレートから選択</div>
+        <div class="pc-item">納品まで10営業日</div>
+        <div class="pc-item">スマホ対応（レスポンシブ）</div>
+        <div class="pc-item">問い合わせフォーム設置</div>
+      </div>
+      <div class="pc-desc">美容業・飲食業・整骨院・建築業など</div>
+    </div>
+    <div class="price-card featured">
+      <span class="pc-badge">おすすめ</span>
+      <div class="pc-name">セミオーダープラン</div>
+      <div class="pc-price">¥400,000<span style="font-size:16px">〜</span></div>
+      <div class="pc-unit">初期費用（税別）</div>
+      <div class="pc-sub">月額 20,000〜30,000円（税別）</div>
+      <div class="pc-divider"></div>
+      <div class="pc-items">
+        <div class="pc-item">10ページ構成（下層ページあり）</div>
+        <div class="pc-item">企業として信頼される本格サイト</div>
+        <div class="pc-item">納品まで15営業日</div>
+        <div class="pc-item">スマホ対応・SEO基礎設定</div>
+        <div class="pc-item">問い合わせフォーム・LINE連携</div>
+      </div>
+      <div class="pc-desc">士業・不動産・工務店・コンサルなど</div>
+    </div>
+    <div class="price-card">
+      <span class="pc-badge">プレミアムプラン</span>
+      <div class="pc-name">デザインにこだわる方へ</div>
+      <div class="pc-price">¥1,000,000<span style="font-size:16px">〜</span></div>
+      <div class="pc-unit">初期費用（税別）</div>
+      <div class="pc-sub">月額 30,000円〜（税別）</div>
+      <div class="pc-divider"></div>
+      <div class="pc-items">
+        <div class="pc-item">15ページ構成・オーダーメイド級</div>
+        <div class="pc-item">コーポレート・採用・LP対応</div>
+        <div class="pc-item">納品まで2〜3ヶ月</div>
+        <div class="pc-item">写真・ライティング・SEO対応</div>
+        <div class="pc-item">下層ページ追加：22,000円〜</div>
+      </div>
+      <div class="pc-desc">コーポレート・リフォーム建築・美容サロン</div>
+    </div>
+  </div>
+  <p style="font-size:11px;color:var(--mid);margin-top:16px;letter-spacing:1px">※ロゴ制作 98,000円〜（税別）／ドメイン移管 5,500円（税別）</p>
+</section>
+
+<section class="sec">
+  <div class="eyebrow">Features</div>
+  <div class="bighead"><div>ウェブエイドが</div><div><span class="lime">大切にすること</span></div></div>
+  <div class="feat-grid">
+    <div class="feat"><div class="feat-n">Point 01</div><div class="feat-title">見てもらえる設計</div><div class="feat-desc">どんなに綺麗なHPでも見てもらえなければ意味がありません。GoogleマップやSNSとの連携導線を最初から設計します。</div></div>
+    <div class="feat"><div class="feat-n">Point 02</div><div class="feat-title">問い合わせが来る情報設計</div><div class="feat-desc">「この会社に頼みたい」と思ってもらうための情報設計。実績・サービス・想いを訴求力のある構成で整理します。</div></div>
+    <div class="feat"><div class="feat-n">Point 03</div><div class="feat-title">更新しやすい仕組み</div><div class="feat-desc">作って終わりではなく、お客様自身が更新できる環境を整備します。簡単な操作でブログ・お知らせを投稿できます。</div></div>
+  </div>
+</section>
+
+<section class="sec">
+  <div class="eyebrow">Flow</div>
+  <div class="bighead"><div>制作までの</div><div><span class="lime">流れ</span></div></div>
+  <div class="flow-grid">
+    <div class="flow-item"><div class="flow-n">01</div><div class="flow-t">無料相談・ヒアリング</div><div class="flow-d">事業内容・ターゲット・ご予算・希望するデザインをヒアリングします。</div></div>
+    <div class="flow-item"><div class="flow-n">02</div><div class="flow-t">プラン決定・契約</div><div class="flow-d">最適なプランをご提案。ご納得いただいてからご契約・初期費用のお支払い。</div></div>
+    <div class="flow-item"><div class="flow-n">03</div><div class="flow-t">制作・確認</div><div class="flow-d">デザイン・コンテンツを制作。修正対応を経て、テストサイトでご確認いただきます。</div></div>
+    <div class="flow-item"><div class="flow-n">04</div><div class="flow-t">公開・納品</div><div class="flow-d">ご承認後に本番公開。操作レクチャーを行い、スムーズな運用スタートをサポート。</div></div>
+  </div>
+</section>
+<section class="cta-section">
+  <div class="cta-big"><div>TALK</div><div>TO</div><div class="s">US.</div></div>
+  <div class="cta-r">
+    <p class="cta-sub">どのプランが合うか迷っている方もまずご相談ください。現状のヒアリングをもとに、最適なプランをご提案します。</p>
+    <a class="cta-btn" href="index.html#contact">無料相談を申し込む →</a>
+    <div class="cta-free">初回相談 <strong>完全無料</strong> / 約60分</div>
+  </div>
+</section>
+
+<div class="ticker">
+  <div class="ticker-i">
+    <span>マップエイド</span><span class="x">×</span><span>ラインエイド</span><span class="x">×</span><span>グラムエイド</span><span class="x">×</span><span>ウェブエイド</span><span class="x">×</span><span>スモールエイド</span><span class="x">×</span><span>ビズエイド</span><span class="x">×</span><span>現場で動く</span><span class="x">×</span><span>一緒に伴走</span><span class="x">×</span>
+    <span>マップエイド</span><span class="x">×</span><span>ラインエイド</span><span class="x">×</span><span>グラムエイド</span><span class="x">×</span><span>ウェブエイド</span><span class="x">×</span><span>スモールエイド</span><span class="x">×</span><span>ビズエイド</span><span class="x">×</span><span>現場で動く</span><span class="x">×</span><span>一緒に伴走</span><span class="x">×</span>
+  </div>
+</div>
+<footer>
+  <div class="fl">AID<span class="fl-r">&</span>AIDE <span style="font-family:'Noto Sans JP';font-size:11px;color:#444;font-weight:400;letter-spacing:1px">株式会社 Aid &amp; Aide</span></div>
+  <div class="fc">© 2025-2026 Aid &amp; Aide Co., Ltd. All rights reserved.</div>
+</footer>
+</body>
+</html>
