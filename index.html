@@ -7,14 +7,14 @@
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
-:root{--ink:#111111;--red:#E31E23;--mid:#808080;--faint:#E8E8E8;--bg:#ffffff}
+:root{--ink:#303030;--red:#E31E23;--mid:#808080;--faint:#E8E8E8;--bg:#ffffff}
 html{scroll-behavior:smooth}
 body{background:var(--bg);color:var(--ink);font-family:'Noto Sans JP',YuGothic,sans-serif;overflow-x:hidden}
 
 /* NAV */
 nav{position:fixed;top:0;left:0;right:0;z-index:200;height:68px;background:rgba(255,255,255,.96);backdrop-filter:blur(8px);border-bottom:1px solid var(--faint);display:flex;align-items:center;justify-content:space-between;padding:0 56px}
 .nav-logo{display:flex;flex-direction:column;gap:2px;text-decoration:none}
-.nav-logo img{height:28px;width:auto;display:block}
+.nav-logo img{height:32px;width:auto;max-width:200px;display:block}
 .nav-logo-sub{font-size:9px;letter-spacing:1px;color:var(--mid);font-family:'Poppins',sans-serif}
 .nav-links{display:flex;align-items:center;gap:36px}
 .nav-links a{font-size:13px;letter-spacing:0.02em;color:var(--mid);text-decoration:none;transition:color .2s;font-weight:500;font-family:'Poppins',sans-serif}
@@ -37,7 +37,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;height:68px;background:rgba(
 .hero{padding-top:68px;min-height:100vh;display:grid;grid-template-rows:1fr auto;border-bottom:1px solid var(--faint)}
 .hero-inner{display:grid;grid-template-columns:1fr 380px;min-height:calc(100vh - 68px - 56px);align-items:center;gap:0}
 .hero-l{padding:80px 56px;display:flex;flex-direction:column;justify-content:center;gap:32px;border-right:1px solid var(--faint)}
-.hero-logo{height:auto;max-height:clamp(56px,7vw,96px);width:auto;max-width:min(400px,60%);display:block;margin-bottom:8px}
+.hero-logo{height:auto;max-height:clamp(80px,10vw,140px);width:auto;max-width:90%;display:block;margin-bottom:16px}
 .hero-tag{font:700 clamp(24px,3.5vw,44px)/1.2 'Poppins',sans-serif;letter-spacing:-1px;color:var(--ink)}
 .hero-sub{font-size:14px;line-height:2.1;color:var(--mid);max-width:480px;border-left:2px solid var(--red);padding-left:20px}
 .hero-act{display:flex;flex-direction:column;gap:12px;max-width:280px}
