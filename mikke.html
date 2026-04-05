@@ -3,8 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1.0">
-<title>集客支援 ミッケ！— Google×LINE×SNS×HP×LLMO 全部入り — 株式会社 Aid &amp; Aide</title>
-<meta name="description" content="集客に必要な5つの武器を月5,000円〜でまるごと提供。Googleマップ・LINE・Instagram・HP・LLMOモニタリングを一気通貫で支援。AIに選ばれるお店・会社をつくります。">
+<title>ミッケ！— Google×LINE×Instagram×HP×LLMO — 株式会社 Aid &amp; Aide</title>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700;900&family=Barlow+Condensed:ital,wght@0,700;0,900;1,700;1,900&family=Anton&display=swap" rel="stylesheet">
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
@@ -20,13 +19,13 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;height:52px;background:var(-
 .nr button{background:var(--ink);color:var(--bg);border:none;font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:11px;letter-spacing:2px;text-transform:uppercase;padding:8px 18px;cursor:pointer;transition:background .2s}
 .nr button:hover{background:var(--red)}
 /* HERO */
-.sv-hero{padding-top:52px;border-bottom:1.5px solid var(--ink);background:var(--ink);min-height:360px;display:flex;flex-direction:column;justify-content:flex-end}
+.sv-hero{padding-top:52px;border-bottom:1.5px solid var(--ink);background:var(--ink);min-height:320px;display:flex;flex-direction:column;justify-content:flex-end}
 .sv-hero-meta{padding:10px 40px;display:flex;justify-content:space-between;font-size:10px;letter-spacing:2px;color:#555;text-transform:uppercase;border-bottom:1px solid #1a1a1a}
 .sv-hero-body{padding:48px 52px;display:grid;grid-template-columns:1fr 380px;gap:48px;align-items:end}
 .sv-eyebrow{font-size:9px;letter-spacing:4px;text-transform:uppercase;color:#555;margin-bottom:16px;display:flex;align-items:center;gap:10px}
 .sv-eyebrow::before{content:'';width:20px;height:1px;background:#555}
 .sv-big{font-family:'Barlow Condensed',sans-serif;font-style:italic;font-weight:900;font-size:clamp(56px,9vw,120px);line-height:.86;letter-spacing:-3px;color:#fff}
-.sv-big .l{color:var(--lime)}
+.sv-big .r{color:var(--red)}
 .sv-big .out{color:transparent;-webkit-text-stroke:1.5px rgba(255,255,255,.3)}
 .sv-tagline{font-size:14px;color:#888;line-height:1.9;border-left:2px solid #333;padding-left:18px}
 .sv-cta-wrap{display:flex;flex-direction:column;gap:12px;padding-bottom:4px}
@@ -49,141 +48,101 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;height:52px;background:var(-
 .problem-grid{display:grid;grid-template-columns:1fr 1fr;border:1px solid var(--faint)}
 .prob-item{padding:28px 32px;border-right:1px solid var(--faint);border-bottom:1px solid var(--faint);display:flex;align-items:baseline;gap:16px;transition:all .15s}
 .prob-item:hover{background:var(--ink);color:var(--bg)}
-.prob-item:nth-child(2n){border-right:none}
-.prob-item:nth-child(n+5){border-bottom:none}
 .prob-n{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:13px;letter-spacing:2px;color:var(--faint);min-width:24px;transition:color .15s}
 .prob-item:hover .prob-n{color:var(--red)}
 .prob-t{font-size:14px;line-height:1.7}
-/* MENU — 5 TOOLS */
-.tools-grid{display:grid;grid-template-columns:repeat(5,1fr);border:1.5px solid var(--ink)}
-.tool{padding:32px 24px;border-right:1.5px solid var(--ink);transition:all .2s;position:relative}
-.tool:last-child{border-right:none}
-.tool:hover{background:var(--ink)}
-.tool:hover .tool-n,.tool:hover .tool-brand,.tool:hover .tool-name,.tool:hover .tool-desc{color:var(--bg)}
-.tool-n{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:11px;letter-spacing:3px;color:var(--faint);margin-bottom:12px;transition:color .2s;text-transform:uppercase}
-.tool-brand{font-family:'Barlow Condensed',sans-serif;font-style:italic;font-weight:900;font-size:22px;color:var(--red);letter-spacing:1px;line-height:1;margin-bottom:6px;transition:color .2s}
-.tool-name{font-size:12px;color:var(--mid);margin-bottom:12px;transition:color .2s;font-weight:700}
-.tool-desc{font-size:11px;color:var(--mid);line-height:1.85;transition:color .2s}
-.tool-lime{background:var(--lime);color:var(--ink);font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:10px;letter-spacing:2px;padding:3px 8px;display:inline-block;margin-bottom:8px;text-transform:uppercase;position:absolute;top:20px;right:16px}
-/* PLANS */
-.plans-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:0;border:1.5px solid var(--ink)}
-.plan{padding:40px 36px;border-right:1.5px solid var(--ink);position:relative}
-.plan:last-child{border-right:none}
-.plan-badge{font-family:'Barlow Condensed',sans-serif;font-size:9px;letter-spacing:3px;text-transform:uppercase;font-weight:700}
-.plan-badge.popular{color:var(--lime);background:var(--ink);padding:3px 10px;display:inline-block;margin-bottom:16px}
-.plan-badge.basic{color:var(--mid);margin-bottom:16px;display:block}
-.plan-name{font-family:'Barlow Condensed',sans-serif;font-style:italic;font-weight:900;font-size:32px;letter-spacing:-0.5px;margin-bottom:8px}
-.plan-price{font-family:'Barlow Condensed',sans-serif;font-style:italic;font-weight:900;font-size:56px;line-height:1;letter-spacing:-2px;color:var(--red)}
-.plan-price .unit{font-size:20px;letter-spacing:0;color:var(--mid)}
-.plan-price .tax{font-size:10px;color:var(--mid);font-style:normal;font-weight:400;letter-spacing:0}
-.plan-tagline{font-size:13px;color:var(--mid);margin:12px 0 24px;line-height:1.7}
-.plan-items{border-top:1px solid var(--faint);padding-top:20px;display:flex;flex-direction:column;gap:10px}
-.plan-item{font-size:12px;display:flex;align-items:baseline;gap:8px;line-height:1.6}
-.pi-check{color:var(--red);font-weight:700;font-size:13px;flex-shrink:0}
-.pi-none{color:var(--faint);font-size:13px;flex-shrink:0}
-.plan-cta{display:block;background:var(--lime);color:var(--ink);text-decoration:none;font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:13px;letter-spacing:2px;text-transform:uppercase;padding:14px;text-align:center;margin-top:28px;transition:background .2s}
-.plan-cta:hover{background:var(--ink);color:var(--bg)}
-/* LLMO WIDGET */
-.llmo-widget{border:1.5px solid var(--ink);background:var(--ink);color:#fff;overflow:hidden}
-.llmo-widget-header{padding:24px 32px;border-bottom:1px solid #222;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px}
-.llmo-badge{background:var(--lime);color:var(--ink);font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:10px;letter-spacing:3px;padding:4px 12px;text-transform:uppercase}
-.llmo-title{font-family:'Barlow Condensed',sans-serif;font-style:italic;font-weight:900;font-size:28px;letter-spacing:-0.5px;color:#fff}
-.llmo-sub{font-size:11px;color:#555;letter-spacing:1px}
-.llmo-body{display:grid;grid-template-columns:240px 1fr;min-height:220px}
-.llmo-score-wrap{border-right:1px solid #1a1a1a;padding:32px;display:flex;flex-direction:column;justify-content:center;align-items:center;gap:8px}
-.llmo-score-num{font-family:'Barlow Condensed',sans-serif;font-style:italic;font-weight:900;font-size:80px;line-height:1;letter-spacing:-3px;color:var(--lime)}
-.llmo-score-unit{font-size:16px;color:#555;font-style:normal;font-weight:400;letter-spacing:0}
-.llmo-score-label{font-size:10px;color:#555;letter-spacing:2px;text-transform:uppercase;text-align:center}
-.llmo-score-bar-wrap{width:100%;height:4px;background:#222;border-radius:2px;margin-top:8px}
-.llmo-score-bar{height:100%;background:var(--lime);border-radius:2px;transition:width 1s ease}
-.llmo-details{padding:32px;display:flex;flex-direction:column;gap:20px}
-.llmo-queries{display:flex;flex-direction:column;gap:10px}
-.llmo-q{display:flex;align-items:baseline;gap:12px;padding:12px 16px;border:1px solid #1a1a1a;border-radius:4px}
-.llmo-q-icon{font-size:14px;flex-shrink:0}
-.llmo-q-text{font-size:12px;color:#888;line-height:1.6}
-.llmo-q-text strong{color:#fff;font-weight:700}
-.llmo-footer{padding:16px 32px;border-top:1px solid #1a1a1a;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:8px}
-.llmo-note{font-size:10px;color:#444;letter-spacing:1px}
-.llmo-date{font-size:10px;color:#333;letter-spacing:1px}
-/* CASE */
-.case-grid{display:grid;grid-template-columns:280px 1fr;border:1px solid var(--faint)}
-.case-l{border-right:1px solid var(--faint);padding:32px 24px;display:flex;flex-direction:column;gap:16px}
-.case-eyebrow{font-size:9px;letter-spacing:4px;text-transform:uppercase;color:var(--mid);display:flex;align-items:center;gap:8px}
-.case-eyebrow::before{content:'';width:14px;height:1px;background:var(--mid)}
-.case-service{font-family:'Barlow Condensed',sans-serif;font-style:italic;font-weight:900;font-size:20px;color:var(--red);letter-spacing:1px;line-height:1.2}
-.case-industry{font-size:9px;letter-spacing:3px;text-transform:uppercase;color:var(--mid);margin-top:2px}
-.case-title{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:16px;letter-spacing:.5px;line-height:1.3}
-.case-stat-num{font-family:'Barlow Condensed',sans-serif;font-style:italic;font-weight:900;font-size:56px;line-height:.9;letter-spacing:-2px}
-.case-stat-num .unit{font-size:20px;letter-spacing:0;color:var(--red)}
-.case-stat-label{font-size:10px;color:var(--mid);letter-spacing:1px;margin-top:5px}
-.case-tags{display:flex;flex-wrap:wrap;gap:5px}
-.ctag{font-family:'Barlow Condensed',sans-serif;font-size:9px;letter-spacing:2px;text-transform:uppercase;border:1px solid var(--faint);padding:3px 8px;color:var(--mid)}
-.case-r{padding:32px 36px;display:flex;flex-direction:column;gap:20px}
-.ba-row{display:grid;grid-template-columns:1fr 28px 1fr;align-items:start;gap:0}
-.ba-head{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:10px;letter-spacing:3px;text-transform:uppercase;margin-bottom:8px}
-.ba-head.before{color:var(--mid)}
-.ba-head.after{color:var(--red)}
-.ba-text{font-size:12px;line-height:1.85}
-.ba-arrow{display:flex;align-items:flex-start;justify-content:center;padding-top:20px;font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:18px;color:var(--faint)}
-.rh{background:var(--ink);padding:18px 24px;display:flex;align-items:center;gap:18px}
-.rh-num{font-family:'Barlow Condensed',sans-serif;font-style:italic;font-weight:900;font-size:36px;color:var(--lime);line-height:1;white-space:nowrap}
-.rh-text{font-size:12px;color:#aaa;line-height:1.8}
-.rh-text strong{color:#fff;font-weight:700}
+/* FEATURES */
+.feat-grid{display:grid;grid-template-columns:repeat(3,1fr);border:1px solid var(--faint)}
+.feat{padding:36px 32px;border-right:1px solid var(--faint);transition:all .2s}
+.feat:last-child{border-right:none}
+.feat:hover{background:var(--ink)}
+.feat:hover .feat-n,.feat:hover .feat-title,.feat:hover .feat-desc{color:var(--bg)}
+.feat-n{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:11px;letter-spacing:3px;color:var(--faint);margin-bottom:12px;transition:color .2s;text-transform:uppercase}
+.feat-title{font-size:15px;font-weight:700;margin-bottom:10px;transition:color .2s}
+.feat-desc{font-size:12px;color:var(--mid);line-height:1.85;transition:color .2s}
 /* FLOW */
 .flow-grid{display:grid;grid-template-columns:repeat(4,1fr);border:1px solid var(--faint)}
-.fi{padding:32px 24px;border-right:1px solid var(--faint)}
-.fi:last-child{border-right:none}
-.fin{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:52px;color:var(--faint);line-height:1;margin-bottom:16px}
-.fit{font-size:14px;font-weight:700;margin-bottom:7px}
-.fid{font-size:12px;color:var(--mid);line-height:1.8}
+.flow-item{padding:32px 28px;border-right:1px solid var(--faint)}
+.flow-item:last-child{border-right:none}
+.flow-n{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:52px;color:var(--faint);line-height:1;margin-bottom:16px}
+.flow-t{font-size:14px;font-weight:700;margin-bottom:8px}
+.flow-d{font-size:12px;color:var(--mid);line-height:1.8}
+/* PRICE */
+.price-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:0;border:1px solid var(--faint)}
+.price-card{padding:40px 36px;border-right:1px solid var(--faint);position:relative}
+.price-card:last-child{border-right:none}
+.price-card.featured{background:var(--ink)}
+.price-card.featured .pc-name,.price-card.featured .pc-price,.price-card.featured .pc-unit,.price-card.featured .pc-desc,.price-card.featured .pc-item{color:var(--bg)}
+.price-card.featured .pc-badge{background:var(--lime);color:var(--ink)}
+.pc-badge{display:inline-block;font-size:9px;letter-spacing:3px;text-transform:uppercase;padding:4px 10px;background:var(--faint);color:var(--mid);margin-bottom:20px;font-family:'Barlow Condensed',sans-serif;font-weight:700}
+.pc-name{font-family:'Barlow Condensed',sans-serif;font-style:italic;font-weight:900;font-size:28px;letter-spacing:1px;margin-bottom:8px}
+.pc-price{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:clamp(36px,4vw,52px);line-height:1;letter-spacing:-1px}
+.pc-unit{font-size:13px;color:var(--mid);margin-bottom:8px}
+.pc-sub{font-size:11px;color:var(--mid);margin-bottom:20px}
+.pc-divider{width:32px;height:2px;background:var(--red);margin-bottom:20px}
+.pc-items{display:flex;flex-direction:column;gap:8px;margin-bottom:28px}
+.pc-item{font-size:12px;color:var(--mid);line-height:1.7;display:flex;align-items:baseline;gap:8px}
+.pc-item::before{content:'—';color:var(--faint);flex-shrink:0}
+.pc-desc{font-size:11px;color:var(--mid);line-height:1.7;margin-top:16px;padding-top:16px;border-top:1px solid var(--faint)}
+/* RESULT */
+.result-bar{background:var(--ink);padding:20px 28px;display:flex;align-items:center;gap:20px}
+.result-num{font-family:'Barlow Condensed',sans-serif;font-style:italic;font-weight:900;font-size:44px;color:var(--lime);line-height:1;white-space:nowrap}
+.result-text{font-size:12px;color:#aaa;line-height:1.8}
+.result-text strong{color:#fff}
+/* FAQ */
+.faq-list{display:flex;flex-direction:column}
+.faq-item{border-bottom:1px solid var(--faint);padding:28px 0}
+.faq-q{font-size:14px;font-weight:700;color:var(--ink);margin-bottom:12px;display:flex;align-items:baseline;gap:12px}
+.faq-q::before{content:'Q.';font-family:'Barlow Condensed',sans-serif;font-style:italic;font-weight:900;font-size:18px;color:var(--red);flex-shrink:0}
+.faq-a{font-size:13px;color:var(--mid);line-height:1.9;padding-left:32px}
 /* CTA */
-.cta-section{background:var(--ink);padding:88px 52px;display:grid;grid-template-columns:1fr 1fr;gap:72px;align-items:center}
-.ctabig{font-family:'Barlow Condensed',sans-serif;font-style:italic;font-weight:900;font-size:clamp(56px,9vw,112px);line-height:.82;letter-spacing:-2px;color:#fff}
-.ctabig .out{color:transparent;-webkit-text-stroke:1.5px rgba(255,255,255,.25)}
-.cta-r{display:flex;flex-direction:column;gap:28px}
+.cta-section{background:var(--ink);padding:80px 52px;display:grid;grid-template-columns:1fr 1fr;gap:72px;align-items:center}
+.cta-big{font-family:'Barlow Condensed',sans-serif;font-style:italic;font-weight:900;font-size:clamp(56px,8vw,100px);line-height:.84;letter-spacing:-2px;color:#fff}
+.cta-big .s{color:transparent;-webkit-text-stroke:1.5px rgba(255,255,255,.25)}
+.cta-r{display:flex;flex-direction:column;gap:24px}
 .cta-sub{font-size:14px;color:#888;line-height:1.9}
-.cta-btn{background:var(--lime);color:var(--ink);border:none;font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:15px;letter-spacing:3px;text-transform:uppercase;padding:18px 0;cursor:pointer;transition:background .2s;width:100%;text-align:center;display:block;text-decoration:none}
+.cta-btn{background:var(--lime);color:var(--ink);border:none;font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:15px;letter-spacing:3px;text-transform:uppercase;padding:18px 0;cursor:pointer;width:100%;text-align:center;display:block;text-decoration:none}
 .cta-btn:hover{background:#fff}
 .cta-free{font-size:10px;color:#444;letter-spacing:1px;text-align:center}
 /* FOOTER */
 footer{background:var(--ink);border-top:1px solid #1a1a1a;padding:24px 40px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px}
-.fc{font-family:'Barlow Condensed',sans-serif;font-style:italic;font-weight:900;font-size:18px;letter-spacing:2px;color:#fff}
-.fc span{color:var(--red)}
-.fp{font-size:10px;color:#444;letter-spacing:2px}
-.fn{display:flex;gap:20px}
-.fn a{font-size:10px;letter-spacing:2px;color:#444;text-decoration:none;text-transform:uppercase}
-.fn a:hover{color:#fff}
+.fl{font-family:'Barlow Condensed',sans-serif;font-style:italic;font-weight:900;font-size:17px;letter-spacing:2px;color:#fff}
+.fl-r{color:var(--red)}
+.fc{font-size:10px;color:#333;letter-spacing:1px}
+/* TICKER */
+.ticker{background:var(--ink);padding:13px 0;overflow:hidden;white-space:nowrap;border-bottom:1.5px solid var(--ink)}
+.ticker-i{display:inline-block;animation:tick 24s linear infinite}
+.ticker-i span{font-family:'Barlow Condensed',sans-serif;font-style:italic;font-weight:900;font-size:18px;letter-spacing:4px;text-transform:uppercase;color:var(--bg);margin:0 32px}
+.ticker-i .x{color:var(--red);font-style:normal;margin:0 6px}
+@keyframes tick{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+/* TWO-COL */
+.two-col{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:start}
+.two-col-r{border-left:1px solid var(--faint);padding-left:48px}
+/* TABLE */
+.data-table{width:100%;border-collapse:collapse;margin-top:24px}
+.data-table th{font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--mid);padding:12px 16px;border-bottom:1.5px solid var(--ink);text-align:left;font-weight:700}
+.data-table td{font-size:13px;padding:14px 16px;border-bottom:1px solid var(--faint);color:var(--ink);line-height:1.7}
+.data-table tr:last-child td{border-bottom:none}
+.tag{font-family:'Barlow Condensed',sans-serif;font-size:10px;letter-spacing:2px;text-transform:uppercase;border:1px solid var(--faint);padding:3px 8px;color:var(--mid);display:inline-block}
 /* RESPONSIVE */
-@media(max-width:768px){
+@media(max-width:900px){
   nav{padding:0 20px}
-  .nr a:not([class]){display:none}
-  .sv-hero-body{grid-template-columns:1fr;gap:24px}
-  .tools-grid{grid-template-columns:1fr 1fr}
-  .tool:nth-child(2n){border-right:none}
-  .tool:nth-child(n+4){border-top:1.5px solid var(--ink)}
-  .plans-grid{grid-template-columns:1fr}
-  .plan{border-right:none;border-bottom:1.5px solid var(--ink)}
-  .plan:last-child{border-bottom:none}
-  .llmo-body{grid-template-columns:1fr}
-  .llmo-score-wrap{border-right:none;border-bottom:1px solid #1a1a1a}
-  .case-grid{grid-template-columns:1fr}
-  .case-l{border-right:none;border-bottom:1px solid var(--faint)}
-  .ba-row{grid-template-columns:1fr}
-  .ba-arrow{display:none}
-  .flow-grid{grid-template-columns:1fr 1fr}
-  .cta-section{grid-template-columns:1fr;gap:32px}
-  .sec{padding:52px 24px}
-  .sec-sm{padding:40px 24px}
-  .breadcrumb{padding:16px 24px}
+  .sv-hero-body{grid-template-columns:1fr;padding:40px 24px}
+  .breadcrumb,.sec,.sec-sm{padding-left:24px;padding-right:24px}
+  .problem-grid,.feat-grid,.flow-grid,.price-grid{grid-template-columns:1fr}
+  .prob-item,.feat,.flow-item,.price-card{border-right:none}
+  .two-col{grid-template-columns:1fr}
+  .two-col-r{border-left:none;padding-left:0;border-top:1px solid var(--faint);padding-top:32px}
+  .cta-section{grid-template-columns:1fr;padding:60px 24px;gap:40px}
+  footer{padding:20px 24px}
 }
 </style>
 </head>
 <body>
-
 <nav>
   <a class="nl" href="index.html">
-    <span>REAL<span style="color:var(--red)">AID</span></span>
-    <span class="nl-sub">by 株式会社 Aid &amp; Aide</span>
+    <span>AID<span style="color:var(--red)">&</span>AIDE</span>
+    <span class="nl-sub">株式会社 Aid &amp; Aide</span>
   </a>
   <div class="nr">
     <a href="mikke.html" style="color:var(--ink);font-weight:700">集客支援 ミッケ！</a>
@@ -194,359 +153,238 @@ footer{background:var(--ink);border-top:1px solid #1a1a1a;padding:24px 40px;disp
   </div>
 </nav>
 
-<!-- HERO -->
 <div class="sv-hero">
-  <div class="sv-hero-meta">
-    <span>Aid &amp; Aide — 集客支援サービス</span>
-    <span>月5,000円〜 / 地域密着型ビジネス向け</span>
-  </div>
+  <div class="sv-hero-meta"><span>Aid &amp; Aide — サービス詳細</span><span>集客支援 ミッケ！</span></div>
   <div class="sv-hero-body">
     <div>
-      <div class="sv-eyebrow">集客支援サービス</div>
-      <div class="sv-big">
-        <div>MIKKE<span class="l">!</span></div>
-        <div style="font-size:clamp(24px,3.5vw,44px);letter-spacing:-1px;color:#888;margin-top:4px">集客支援 ミッケ！</div>
-      </div>
-      <div class="sv-tagline" style="margin-top:24px">
-        Google × LINE × Instagram × HP × LLMO<br>
-        集客に必要な5つの武器を、月5,000円〜でまるごと。<br>
-        <strong style="color:#fff">AIに選ばれるお店・会社をつくります。</strong>
-      </div>
+      <div class="sv-eyebrow">Service 01</div>
+      <div class="sv-big" style="font-size:clamp(72px,11vw,140px)"><div style="color:var(--lime)">ミッケ！</div></div>
+      <p style="font-size:11px;letter-spacing:3px;color:#555;margin-top:8px;font-family:'Barlow Condensed',sans-serif">MIKKE — All In One Web Marketing</p>
     </div>
-    <div class="sv-cta-wrap">
-      <a class="sv-cta" href="index.html#contact">無料相談を申し込む →</a>
-      <div class="sv-price-preview">初回相談 / 完全無料 / 約60分</div>
-      <div class="sv-price-preview" style="margin-top:8px;color:var(--lime)">スモールエイド（月29,800円〜）で全部入り</div>
-    </div>
-  </div>
-</div>
-
-<!-- BREADCRUMB -->
-<div class="breadcrumb">
-  <a href="index.html">HOME</a>
-  <span>›</span>
-  <a href="index.html#sv">サービス</a>
-  <span>›</span>
-  <span>集客支援 ミッケ！</span>
-</div>
-
-<!-- PROBLEM -->
-<section class="sec">
-  <div class="eyebrow">Problem</div>
-  <div class="bighead">
-    <div>こんな悩み、</div>
-    <div><span class="out">ありません</span>か？</div>
-  </div>
-  <div class="problem-grid">
-    <div class="prob-item"><span class="prob-n">01</span><span class="prob-t">Googleマップで近くの同業者に負けている</span></div>
-    <div class="prob-item"><span class="prob-n">02</span><span class="prob-t">LINEで登録者がいるのに活用できていない</span></div>
-    <div class="prob-item"><span class="prob-n">03</span><span class="prob-t">Instagramは投稿しているが集客につながらない</span></div>
-    <div class="prob-item"><span class="prob-n">04</span><span class="prob-t">HPが古くて問い合わせが来ない</span></div>
-    <div class="prob-item"><span class="prob-n">05</span><span class="prob-t">ChatGPTやAIに「おすすめ」として出てこない</span></div>
-    <div class="prob-item"><span class="prob-n">06</span><span class="prob-t">集客ツールが多すぎて何から手をつければいいかわからない</span></div>
-    <div class="prob-item"><span class="prob-n">07</span><span class="prob-t">広告費をかけているのに費用対効果が見えない</span></div>
-    <div class="prob-item"><span class="prob-n">08</span><span class="prob-t">一人でやるには限界があって継続できない</span></div>
-  </div>
-</section>
-
-<!-- 5 TOOLS -->
-<section class="sec-sm">
-  <div class="eyebrow">What's Included</div>
-  <div class="bighead">
-    <div>5つの武器を、</div>
-    <div><span class="lime">まるごと</span>提供。</div>
-  </div>
-  <p style="font-size:13px;color:var(--mid);line-height:1.9;max-width:560px;margin-bottom:48px">
-    「どれか一つ」ではなく「全部つながった状態」で動かすことが集客の鉄則。
-    ミッケ！は5つの集客チャネルを一気通貫で支援します。
-  </p>
-  <div class="tools-grid">
-    <div class="tool">
-      <div class="tool-lime">MEO</div>
-      <div class="tool-n">Tool 01</div>
-      <div class="tool-brand">Google Map</div>
-      <div class="tool-name">Googleマップ MEO対策</div>
-      <div class="tool-desc">ビジネスプロフィール最適化・口コミ獲得・写真管理・投稿運用。「近くの○○」で上位表示される状態を作ります。</div>
-    </div>
-    <div class="tool">
-      <div class="tool-lime">CRM</div>
-      <div class="tool-n">Tool 02</div>
-      <div class="tool-brand">LINE</div>
-      <div class="tool-name">公式LINE・ステップ配信</div>
-      <div class="tool-desc">登録促進設計・ステップ配信・セグメント配信・クーポン配信まで。一度来た客を継続顧客に変える仕組みを構築します。</div>
-    </div>
-    <div class="tool">
-      <div class="tool-lime">SNS</div>
-      <div class="tool-n">Tool 03</div>
-      <div class="tool-brand">Instagram</div>
-      <div class="tool-name">Instagram SNS運用</div>
-      <div class="tool-desc">投稿文案・ハッシュタグ戦略・フォロワー導線設計。業種・エリアの特性に合わせた投稿で「行きたい」を引き出します。</div>
-    </div>
-    <div class="tool">
-      <div class="tool-lime">WEB</div>
-      <div class="tool-n">Tool 04</div>
-      <div class="tool-brand">Homepage</div>
-      <div class="tool-name">HP・ブランディング支援</div>
-      <div class="tool-desc">集客・採用・信頼感の3つを同時に高めるHP制作と継続更新。Googleマップと連携させて問い合わせ導線を確立します。</div>
-    </div>
-    <div class="tool">
-      <div class="tool-lime">NEW</div>
-      <div class="tool-n">Tool 05</div>
-      <div class="tool-brand">LLMO</div>
-      <div class="tool-name">LLMOモニタリング</div>
-      <div class="tool-desc">ChatGPT・Claude・Perplexityなどの生成AIがあなたの会社を「おすすめ」するか定期計測。AIに選ばれる会社に育てます。</div>
-    </div>
-  </div>
-</section>
-
-<!-- LLMO SCORE WIDGET -->
-<section class="sec-sm" id="llmo-demo">
-  <div class="eyebrow">LLMO Monitoring</div>
-  <div class="bighead">
-    <div>AIに選ばれているか、</div>
-    <div><span class="out">数字</span>で見える化。</div>
-  </div>
-  <p style="font-size:13px;color:var(--mid);line-height:1.9;max-width:560px;margin-bottom:40px">
-    「大阪 司法書士 おすすめ」「神戸 整骨院 人気」…<br>
-    生成AIに質問したとき、あなたの会社が回答に含まれているか？<br>
-    ミッケ！では<strong style="color:var(--ink)">2週間ごとに自動計測</strong>し、スコアと改善アクションをレポートします。
-  </p>
-
-  <!-- LLMO スコア表示エリア（将来API連携） -->
-  <!-- GET /api/llmo/latest?client=demo から取得予定 -->
-  <div id="llmo-score-widget" class="llmo-widget">
-    <div class="llmo-widget-header">
-      <div>
-        <div style="display:flex;align-items:center;gap:12px;margin-bottom:6px">
-          <span class="llmo-badge">LLMO Score</span>
-          <span style="font-size:10px;color:#444;letter-spacing:2px">— サンプル表示</span>
-        </div>
-        <div class="llmo-title">AI言及率モニタリング</div>
-      </div>
-      <div style="text-align:right">
-        <div class="llmo-sub">次回計測まで <span style="color:var(--lime);font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:18px" id="llmo-days">—</span> 日</div>
-        <div class="llmo-sub" style="margin-top:4px">毎月1日・15日 自動実行</div>
-      </div>
-    </div>
-
-    <div class="llmo-body">
-      <div class="llmo-score-wrap">
-        <div class="llmo-score-num">75<span class="llmo-score-unit">%</span></div>
-        <div class="llmo-score-label">Claude 言及率</div>
-        <div class="llmo-score-bar-wrap">
-          <div class="llmo-score-bar" style="width:75%"></div>
-        </div>
-        <div style="margin-top:16px;font-size:11px;color:var(--lime);font-family:'Barlow Condensed',sans-serif;font-weight:700;letter-spacing:1px">
-          ↑ +12.5% 前回比
-        </div>
-      </div>
-
-      <div class="llmo-details">
-        <div style="font-size:10px;letter-spacing:3px;text-transform:uppercase;color:#555;margin-bottom:4px">チェックキーワード別の結果</div>
-        <div class="llmo-queries">
-          <div class="llmo-q">
-            <span class="llmo-q-icon">✅</span>
-            <div class="llmo-q-text"><strong>「大阪 司法書士 おすすめ」</strong> → 回答に言及あり</div>
-          </div>
-          <div class="llmo-q">
-            <span class="llmo-q-icon">✅</span>
-            <div class="llmo-q-text"><strong>「北区 司法書士 評判」</strong> → 回答に言及あり</div>
-          </div>
-          <div class="llmo-q">
-            <span class="llmo-q-icon">✅</span>
-            <div class="llmo-q-text"><strong>「相続 司法書士 大阪」</strong> → 回答に言及あり</div>
-          </div>
-          <div class="llmo-q">
-            <span class="llmo-q-icon">❌</span>
-            <div class="llmo-q-text"><strong>「遺言書 作成 大阪」</strong> → 言及なし（要改善）</div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="llmo-footer">
-      <div class="llmo-note">※ これはデモ表示です。実際のスコアはご契約後にご確認いただけます。</div>
-      <div class="llmo-date">計測日: 2025年4月1日（第1回）</div>
-    </div>
-  </div>
-
-  <div style="margin-top:24px;padding:20px 28px;border:1px solid var(--faint);display:flex;align-items:flex-start;gap:16px;max-width:680px">
-    <div style="font-size:20px;flex-shrink:0">💡</div>
     <div>
-      <div style="font-size:13px;font-weight:700;margin-bottom:6px">AIフィードバック（自動生成）</div>
-      <div style="font-size:12px;color:var(--mid);line-height:1.85">
-        今回の言及率は75%と前回から12.5%改善しました。「相続」関連キーワードでの言及が課題です。
-        次の2週間で取り組むべきアクション：①Googleマップに「相続手続き」関連の投稿を追加、
-        ②HPの相続ページにQ&Aコンテンツを3件追加、③Instagramで相続事例の投稿を2本公開。
+      <p class="sv-tagline">「見つけてほしい」——その一言に集約されるすべての施策を、ワンパッケージで。GoogleマップからLINE・Instagram・HP・LLMOまで、ばらばらに動かすのをやめて、一気通貫で設計します。</p>
+      <div class="sv-cta-wrap" style="margin-top:24px">
+        <a class="sv-cta" href="index.html#contact">無料相談を申し込む →</a>
+        <p class="sv-price-preview">月5,000円〜のライトプランから本格対応まで / 初回相談無料</p>
       </div>
+    </div>
+  </div>
+</div>
+<div class="breadcrumb"><a href="index.html">HOME</a> <span>›</span> <a href="index.html#sv">サービス</a> <span>›</span> <span>集客支援 ミッケ！</span></div>
+
+<section class="sec" style="background:var(--ink)">
+  <div class="eyebrow" style="color:#555">5 in 1</div>
+  <div class="bighead" style="color:#fff;margin-bottom:40px"><div>ミッケ！に</div><div><span style="background:var(--lime);color:var(--ink);padding:2px 12px">入っているもの</span></div></div>
+  <div style="display:grid;grid-template-columns:repeat(5,1fr);border:1px solid #1a1a1a">
+    <div style="padding:28px 24px;border-right:1px solid #1a1a1a;text-align:center">
+      <div style="font-family:'Barlow Condensed',sans-serif;font-style:italic;font-weight:900;font-size:13px;letter-spacing:2px;color:var(--lime);margin-bottom:12px">MAP</div>
+      <div style="font-size:13px;font-weight:700;color:#fff;margin-bottom:8px">Googleマップ</div>
+      <div style="font-size:11px;color:#555;line-height:1.8">口コミ改善<br>MEO対策<br>検索上位</div>
+    </div>
+    <div style="padding:28px 24px;border-right:1px solid #1a1a1a;text-align:center">
+      <div style="font-family:'Barlow Condensed',sans-serif;font-style:italic;font-weight:900;font-size:13px;letter-spacing:2px;color:var(--lime);margin-bottom:12px">LINE</div>
+      <div style="font-size:13px;font-weight:700;color:#fff;margin-bottom:8px">LINE公式</div>
+      <div style="font-size:11px;color:#555;line-height:1.8">構築・配信<br>Lステップ<br>リピート促進</div>
+    </div>
+    <div style="padding:28px 24px;border-right:1px solid #1a1a1a;text-align:center">
+      <div style="font-family:'Barlow Condensed',sans-serif;font-style:italic;font-weight:900;font-size:13px;letter-spacing:2px;color:var(--lime);margin-bottom:12px">GRAM</div>
+      <div style="font-size:13px;font-weight:700;color:#fff;margin-bottom:8px">Instagram</div>
+      <div style="font-size:11px;color:#555;line-height:1.8">運用代行<br>投稿制作<br>認知拡大</div>
+    </div>
+    <div style="padding:28px 24px;border-right:1px solid #1a1a1a;text-align:center">
+      <div style="font-family:'Barlow Condensed',sans-serif;font-style:italic;font-weight:900;font-size:13px;letter-spacing:2px;color:var(--lime);margin-bottom:12px">WEB</div>
+      <div style="font-size:13px;font-weight:700;color:#fff;margin-bottom:8px">ホームページ</div>
+      <div style="font-size:11px;color:#555;line-height:1.8">制作・運用<br>集客導線<br>信頼構築</div>
+    </div>
+    <div style="padding:28px 24px;text-align:center">
+      <div style="font-family:'Barlow Condensed',sans-serif;font-style:italic;font-weight:900;font-size:13px;letter-spacing:2px;color:var(--lime);margin-bottom:12px">LLMO</div>
+      <div style="font-size:13px;font-weight:700;color:#fff;margin-bottom:8px">AI対策</div>
+      <div style="font-size:11px;color:#555;line-height:1.8">ChatGPT<br>Claude<br>Perplexity</div>
     </div>
   </div>
 </section>
 
-<!-- PLANS -->
 <section class="sec">
-  <div class="eyebrow">Pricing</div>
-  <div class="bighead">
-    <div>月5,000円から、</div>
-    <div>始められます。</div>
-  </div>
-  <div class="plans-grid">
-    <div class="plan">
-      <div class="plan-badge basic">エントリープラン</div>
-      <div class="plan-name">マップエイド</div>
-      <div class="plan-price">5,000<span class="unit">円<span class="tax">/月〜</span></span></div>
-      <div class="plan-tagline">まずGoogleマップ1本に絞って<br>地域での存在感を作ります。</div>
-      <div class="plan-items">
-        <div class="plan-item"><span class="pi-check">✓</span> Googleマップ最適化</div>
-        <div class="plan-item"><span class="pi-check">✓</span> 口コミ獲得の仕組み化</div>
-        <div class="plan-item"><span class="pi-check">✓</span> 月次レポート</div>
-        <div class="plan-item"><span class="pi-none">—</span> <span style="color:var(--faint)">LINE・SNS・LLMO</span></div>
-      </div>
-      <a class="plan-cta" href="index.html#contact">相談してみる →</a>
+  <div class="eyebrow">Why Mikke</div>
+  <div class="bighead"><div>なぜバラバラより</div><div><span class="lime">まとめた方がいいか。</span></div></div>
+  <div class="two-col">
+    <div>
+      <p style="font-size:13px;color:var(--mid);line-height:1.95;margin-bottom:20px">「Googleマップだけ」「Instagramだけ」と単発でやっても、それぞれが連動していなければ集客の導線にはなりません。</p>
+      <p style="font-size:13px;color:var(--mid);line-height:1.95;margin-bottom:20px">ミッケ！は5つの施策を<strong style="color:var(--ink)">一本の導線として設計</strong>します。GoogleマップでAI見つけてもらい→Instagramで興味を持ってもらい→LINEで関係を築き→HPで決断してもらう。この流れをまるごと整えます。</p>
+      <p style="font-size:13px;color:var(--mid);line-height:1.95">さらにLLMOモニタリングで、ChatGPTなどのAIにも「この会社」と答えてもらえる状態を目指します。</p>
     </div>
-    <div class="plan" style="background:var(--ink)">
-      <div class="plan-badge popular">人気 No.1</div>
-      <div class="plan-name" style="color:#fff">スモールエイド</div>
-      <div class="plan-price" style="color:var(--lime)">29,800<span class="unit" style="color:#555">円<span class="tax" style="color:#444">/月〜</span></span></div>
-      <div class="plan-tagline" style="color:#888">Google×LINE×Instagram の3本柱で<br>集客を自動化する全部入りプラン。</div>
-      <div class="plan-items" style="border-top-color:#222">
-        <div class="plan-item" style="color:#fff"><span class="pi-check">✓</span> Googleマップ MEO対策</div>
-        <div class="plan-item" style="color:#fff"><span class="pi-check">✓</span> 公式LINE・ステップ配信構築</div>
-        <div class="plan-item" style="color:#fff"><span class="pi-check">✓</span> Instagram 月4本投稿文案</div>
-        <div class="plan-item" style="color:#fff"><span class="pi-check">✓</span> 口コミ返信文（月4件）</div>
-        <div class="plan-item" style="color:#fff"><span class="pi-check">✓</span> LINE配信テキスト（月2回）</div>
-        <div class="plan-item" style="color:var(--lime)"><span style="color:var(--lime)">✓</span> LLMOスコアモニタリング</div>
+    <div class="two-col-r">
+      <div style="display:flex;flex-direction:column;gap:16px">
+        <div style="padding:20px 24px;background:var(--faint);border-radius:4px">
+          <div style="font-size:10px;letter-spacing:3px;color:var(--mid);margin-bottom:8px">BEFORE</div>
+          <div style="font-size:13px;color:var(--mid);line-height:1.9">Googleマップだけ対策<br>→ Instagramは別会社に依頼<br>→ LINEは放置<br>→ HPは古いまま<br>→ <strong style="color:var(--ink)">連動せず効果が出ない</strong></div>
+        </div>
+        <div style="padding:20px 24px;background:var(--ink);border-radius:4px">
+          <div style="font-size:10px;letter-spacing:3px;color:var(--lime);margin-bottom:8px">AFTER — ミッケ！</div>
+          <div style="font-size:13px;color:#aaa;line-height:1.9">全施策を一本の導線で設計<br>→ AI・Googleに見つけられる<br>→ SNSで信頼される<br>→ LINEでリピートされる<br>→ <strong style="color:var(--lime)">集客が仕組みとして回る</strong></div>
+        </div>
       </div>
-      <a class="plan-cta" href="index.html#contact" style="background:var(--lime)">無料相談を申し込む →</a>
-    </div>
-    <div class="plan">
-      <div class="plan-badge basic">カスタム</div>
-      <div class="plan-name">ビズエイド</div>
-      <div class="plan-price">要<span class="unit">相談</span></div>
-      <div class="plan-tagline">集客だけでなく経営・営業・組織まで<br>まるごと伴走したい方向け。</div>
-      <div class="plan-items">
-        <div class="plan-item"><span class="pi-check">✓</span> ミッケ！の全機能</div>
-        <div class="plan-item"><span class="pi-check">✓</span> 経営戦略・事業計画</div>
-        <div class="plan-item"><span class="pi-check">✓</span> 営業の仕組み化</div>
-        <div class="plan-item"><span class="pi-check">✓</span> 組織開発・評価制度</div>
-        <div class="plan-item"><span class="pi-check">✓</span> 月次MTG・現場伴走</div>
-      </div>
-      <a class="plan-cta" href="biz_aid.html">ビズエイドを見る →</a>
     </div>
   </div>
 </section>
 
-<!-- CASE STUDY -->
-<section class="sec" id="cases">
-  <div class="eyebrow">Case Studies</div>
-  <div class="bighead">
-    <div><span class="out">実際</span>の</div>
-    <div>支援事例。</div>
-  </div>
-
-  <div class="case-grid" style="margin-bottom:1px">
-    <div class="case-l">
-      <div class="case-eyebrow">Case 01</div>
-      <div class="case-service">集客支援 ミッケ！</div>
-      <div class="case-industry">美容室 / 個人サロン</div>
-      <div class="case-title">MAP+LINE+SNSで<br>新規集客を自動化</div>
-      <div><div class="case-stat-num">3<span class="unit">倍</span></div><div class="case-stat-label">月間予約数（6ヶ月後）</div></div>
-      <div class="case-tags"><div class="ctag">MEO</div><div class="ctag">LINE</div><div class="ctag">Instagram</div></div>
-    </div>
-    <div class="case-r">
-      <div class="ba-row">
-        <div><div class="ba-head before">Before</div><div class="ba-text">Googleマップは放置、LINEは登録者ゼロ、Instagramは気が向いたとき投稿。毎月の集客は口コミだけで頭打ちだった。</div></div>
-        <div class="ba-arrow">→</div>
-        <div><div class="ba-head after">After</div><div class="ba-text">MEO対策で「地域×美容室」で上位表示。来店後にLINE登録→ステップ配信でリピート促進。Instagram投稿文案を毎月4本提供し、フォロワーから予約が入るように。</div></div>
-      </div>
-      <div class="rh"><div class="rh-num">×3</div><div class="rh-text"><strong>月間予約数が3倍に。</strong>3つのチャネルをつなげて動かすことで、集客が「待つ」から「仕組みで取る」に変わりました。</div></div>
-    </div>
-  </div>
-
-  <div class="case-grid">
-    <div class="case-l">
-      <div class="case-eyebrow">Case 02 — LLMO事例</div>
-      <div class="case-service">集客支援 ミッケ！</div>
-      <div class="case-industry">司法書士事務所 / 大阪市</div>
-      <div class="case-title">AIに「おすすめ」として<br>言及されるように</div>
-      <div><div class="case-stat-num">0<span class="unit">→75%</span></div><div class="case-stat-label">LLMO言及率（3ヶ月後）</div></div>
-      <div class="case-tags"><div class="ctag">LLMO</div><div class="ctag">MEO</div><div class="ctag">HP</div></div>
-    </div>
-    <div class="case-r">
-      <div class="ba-row">
-        <div><div class="ba-head before">Before</div><div class="ba-text">「大阪 司法書士 おすすめ」とAIに質問しても一切言及されない状態。ChatGPTやClaudeの回答には常に競合の名前が挙がっていた。</div></div>
-        <div class="ba-arrow">→</div>
-        <div><div class="ba-head after">After</div><div class="ba-text">HPの専門コンテンツ強化・Googleマップへの定期投稿・口コミ獲得を継続した結果、3ヶ月後のLLMOスコアが0%→75%に向上。AIに名前を挙げてもらえるように。</div></div>
-      </div>
-      <div class="rh"><div class="rh-num">75%</div><div class="rh-text"><strong>LLMO言及率が0%から75%に。</strong>AIに選ばれる会社になるためのコンテンツ戦略を、ミッケ！が一緒に設計・実行します。</div></div>
-    </div>
-  </div>
-</section>
-
-<!-- HOW IT WORKS -->
 <section class="sec-sm">
-  <div class="eyebrow">How It Works</div>
-  <div class="bighead" style="margin-bottom:48px">
-    <div>始め方は</div>
-    <div>シンプルです。</div>
+  <div class="eyebrow">Price</div>
+  <div class="bighead">料金プラン</div>
+  <div class="price-grid">
+    <div class="price-card">
+      <span class="pc-badge">ライトプラン</span>
+      <div class="pc-name">まず始める</div>
+      <div class="pc-price">¥5,000</div>
+      <div class="pc-unit">月額〜（税別）/ 初期費用なし</div>
+      <div class="pc-sub">コンテンツ支援＋LLMOモニタリング</div>
+      <div class="pc-divider"></div>
+      <div class="pc-items">
+        <div class="pc-item">AI言及率スコア計測（月2回）</div>
+        <div class="pc-item">口コミ返信文（月4件）</div>
+        <div class="pc-item">SNS投稿文案（月4本）</div>
+        <div class="pc-item">LINE配信テキスト（月2回分）</div>
+        <div class="pc-item">改善アクション自動提案</div>
+      </div>
+      <div class="pc-desc">飲食・カフェ・ジムなど個人事業主に最適</div>
+    </div>
+    <div class="price-card featured">
+      <span class="pc-badge">おすすめ</span>
+      <div class="pc-name">スタンダードプラン</div>
+      <div class="pc-price">要相談</div>
+      <div class="pc-unit">業種・規模に合わせて設計</div>
+      <div class="pc-sub">Google×LINE×Instagram×LLMO</div>
+      <div class="pc-divider"></div>
+      <div class="pc-items">
+        <div class="pc-item">Googleマップ MEO対策</div>
+        <div class="pc-item">LINE公式構築・運用</div>
+        <div class="pc-item">Instagram運用代行</div>
+        <div class="pc-item">LLMOモニタリング＋レポート</div>
+        <div class="pc-item">月次改善提案・伴走サポート</div>
+      </div>
+    </div>
+    <div class="price-card">
+      <span class="pc-badge">フルパッケージ</span>
+      <div class="pc-name">プレミアムプラン</div>
+      <div class="pc-price">要相談</div>
+      <div class="pc-unit">全施策フル対応</div>
+      <div class="pc-sub">5施策すべてを一気通貫で</div>
+      <div class="pc-divider"></div>
+      <div class="pc-items">
+        <div class="pc-item">スタンダードの全内容</div>
+        <div class="pc-item">ホームページ制作</div>
+        <div class="pc-item">Lステップ構築</div>
+        <div class="pc-item">専任担当による月次伴走</div>
+        <div class="pc-item">LLMOスコア向上保証プラン</div>
+      </div>
+    </div>
   </div>
+</section>
+
+<!-- ─── LLMOモニタリング スコア表示エリア ─── -->
+<!-- 将来: GET /api/llmo/latest?client=demo から動的取得予定 -->
+<section class="sec-sm" id="llmo-demo" style="background:var(--ink)">
+  <div class="eyebrow" style="color:#555"><span style="background:#555;display:inline-block;width:20px;height:1px;margin-right:10px"></span>LLMO Monitoring</div>
+  <div class="bighead" style="color:#fff"><div>AIに選ばれているか、</div><div style="color:transparent;-webkit-text-stroke:1.5px rgba(255,255,255,.3)">数字で見える化。</div></div>
+  <p style="font-size:13px;color:#666;line-height:1.9;max-width:560px;margin-bottom:40px">
+    「大阪 司法書士 おすすめ」「神戸 整骨院 人気」…<br>
+    生成AIに質問したとき、あなたの店・会社が回答に含まれているか？<br>
+    <strong style="color:#fff">2週間ごとに自動計測</strong>してスコアと改善アクションをレポートします。
+  </p>
+
+  <div id="llmo-score-widget" style="border:1px solid #1a1a1a;overflow:hidden;max-width:860px">
+    <div style="padding:20px 28px;border-bottom:1px solid #1a1a1a;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px">
+      <div>
+        <span style="background:var(--lime);color:var(--ink);font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:10px;letter-spacing:3px;padding:3px 10px;text-transform:uppercase;margin-right:10px">LLMO Score</span>
+        <span style="font-size:10px;color:#444;letter-spacing:2px">— サンプル表示</span>
+        <div style="font-family:'Barlow Condensed',sans-serif;font-style:italic;font-weight:900;font-size:24px;color:#fff;margin-top:6px">AI言及率モニタリング</div>
+      </div>
+      <div style="text-align:right;font-size:11px;color:#444;letter-spacing:1px">
+        次回計測まで <span id="llmo-days" style="color:var(--lime);font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:20px">—</span> 日<br>
+        <span style="font-size:10px">毎月1日・15日 自動実行</span>
+      </div>
+    </div>
+
+    <div style="display:grid;grid-template-columns:220px 1fr">
+      <div style="border-right:1px solid #1a1a1a;padding:32px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px">
+        <div style="font-family:'Barlow Condensed',sans-serif;font-style:italic;font-weight:900;font-size:72px;line-height:1;letter-spacing:-3px;color:var(--lime)">75<span style="font-size:18px;color:#555">%</span></div>
+        <div style="font-size:10px;color:#555;letter-spacing:2px;text-transform:uppercase;text-align:center">Claude 言及率</div>
+        <div style="width:100%;height:4px;background:#222;border-radius:2px"><div style="width:75%;height:100%;background:var(--lime);border-radius:2px"></div></div>
+        <div style="font-size:11px;color:var(--lime);font-family:'Barlow Condensed',sans-serif;font-weight:700;letter-spacing:1px;margin-top:8px">↑ +12.5% 前回比</div>
+      </div>
+      <div style="padding:28px;display:flex;flex-direction:column;gap:10px">
+        <div style="font-size:10px;letter-spacing:3px;text-transform:uppercase;color:#444;margin-bottom:4px">チェックキーワード別の結果</div>
+        <div style="display:flex;align-items:baseline;gap:12px;padding:10px 14px;border:1px solid #1a1a1a"><span style="font-size:14px">✅</span><span style="font-size:12px;color:#888"><strong style="color:#fff">「大阪 司法書士 おすすめ」</strong> → 言及あり</span></div>
+        <div style="display:flex;align-items:baseline;gap:12px;padding:10px 14px;border:1px solid #1a1a1a"><span style="font-size:14px">✅</span><span style="font-size:12px;color:#888"><strong style="color:#fff">「北区 司法書士 評判」</strong> → 言及あり</span></div>
+        <div style="display:flex;align-items:baseline;gap:12px;padding:10px 14px;border:1px solid #1a1a1a"><span style="font-size:14px">✅</span><span style="font-size:12px;color:#888"><strong style="color:#fff">「相続 司法書士 大阪」</strong> → 言及あり</span></div>
+        <div style="display:flex;align-items:baseline;gap:12px;padding:10px 14px;border:1px solid #1a1a1a"><span style="font-size:14px">❌</span><span style="font-size:12px;color:#888"><strong style="color:#fff">「遺言書 作成 大阪」</strong> → 言及なし（要改善）</span></div>
+      </div>
+    </div>
+
+    <div style="padding:14px 28px;border-top:1px solid #1a1a1a;display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px">
+      <div style="font-size:10px;color:#333;letter-spacing:1px">※ これはデモ表示です。実際のスコアはご契約後にご確認いただけます。</div>
+      <div style="font-size:10px;color:#333;letter-spacing:1px">計測日: 2025年4月1日（第1回）</div>
+    </div>
+  </div>
+</section>
+<!-- ─── /LLMO ─── -->
+
+<section class="sec">
+  <div class="eyebrow">Flow</div>
+  <div class="bighead"><div>導入までの</div><div><span class="lime">流れ</span></div></div>
   <div class="flow-grid">
-    <div class="fi"><div class="fin">01</div><div class="fit">無料相談（60分）</div><div class="fid">現状の課題と目標をヒアリング。どのプランが合うか、何から始めるかをご提案します。</div></div>
-    <div class="fi"><div class="fin">02</div><div class="fit">現状診断</div><div class="fid">Googleマップ・HP・SNS・AI言及率の現状を調査し、優先順位をスコアで可視化します。</div></div>
-    <div class="fi"><div class="fin">03</div><div class="fit">即スタート</div><div class="fid">診断翌週から施策スタート。まず効果が出やすいMEO対策から動きます。</div></div>
-    <div class="fi"><div class="fin">04</div><div class="fit">月次レポート</div><div class="fid">2週間ごとのLLMOスコアと月次の数字を共有。成果を確認しながら次の打ち手を一緒に設計。</div></div>
+    <div class="flow-item"><div class="flow-n">01</div><div class="flow-t">無料相談・現状診断</div><div class="flow-d">今の集客状況とLLMOスコアを無料で診断。何から始めるべきかを整理します。</div></div>
+    <div class="flow-item"><div class="flow-n">02</div><div class="flow-t">プラン設計</div><div class="flow-d">業種・エリア・予算に合わせて5施策の優先順位と組み合わせを設計。</div></div>
+    <div class="flow-item"><div class="flow-n">03</div><div class="flow-t">導入・設定</div><div class="flow-d">最短5,000円・翌月スタート。本格プランは初期設定から丁寧に進めます。</div></div>
+    <div class="flow-item"><div class="flow-n">04</div><div class="flow-t">継続改善</div><div class="flow-d">2週間ごとのLLMOレポートを軸に、全施策を継続改善。数字で変化が見えます。</div></div>
   </div>
 </section>
 
-<!-- CTA -->
+<section class="sec-sm">
+  <div class="eyebrow">FAQ</div>
+  <div class="bighead">よくある<br>ご質問</div>
+  <div class="faq-list">
+    <div class="faq-item"><div class="faq-q">全部一度に始めないといけませんか？</div><div class="faq-a">いいえ。月5,000円のライトプランから始めて、成果を確認しながら必要な施策を追加していけます。「全部やる必要はない、必要なものだけ」というスタンスで提案します。</div></div>
+    <div class="faq-item"><div class="faq-q">今すでに別会社にInstagramを頼んでいます</div><div class="faq-a">部分的なご依頼も可能です。「LLMOとGoogleマップだけ」「LINEとHPだけ」など、既存の取り組みに合わせて組み合わせます。</div></div>
+    <div class="faq-item"><div class="faq-q">士業・不動産・工務店・中古車でも効果がありますか？</div><div class="faq-a">はい、これらの業種こそミッケ！が最も効果を発揮します。地域で検索される業種はGoogleマップ×LLMO×SNSの連動が集客の決め手になります。</div></div>
+  </div>
+</section>
 <section class="cta-section">
-  <div class="ctabig">
-    <div>FREE</div>
-    <div class="out">CONSULT.</div>
-  </div>
+  <div class="cta-big"><div>見つけて</div><div>もらお</div><div class="s">う。</div></div>
   <div class="cta-r">
-    <div class="cta-sub">初回相談は完全無料・約60分。<br>今困っていることを聞かせてください。<br>「何から始めればいいか」から一緒に整理します。</div>
+    <p class="cta-sub">「何から始めればいいかわからない」——それが一番多いご相談です。まず現状を聞かせてください。必要なものだけをご提案します。</p>
     <a class="cta-btn" href="index.html#contact">無料相談を申し込む →</a>
-    <div class="cta-free">初回相談 / 完全無料 / 約60分 / <strong style="color:#666">強引な営業は一切しません</strong></div>
+    <div class="cta-free">初回相談 <strong>完全無料</strong> / 約60分</div>
   </div>
 </section>
 
-<!-- FOOTER -->
-<footer>
-  <a href="index.html" class="fc">REAL<span>AID</span> <span style="font-size:12px;color:#444;letter-spacing:1px;font-style:normal;font-weight:400">by 株式会社 Aid &amp; Aide</span></a>
-  <div class="fn">
-    <a href="mikke.html">集客支援 ミッケ！</a>
-    <a href="biz_aid.html">ビズエイド</a>
-    <a href="index.html#contact">お問い合わせ</a>
+<div class="ticker">
+  <div class="ticker-i">
+    <span>マップエイド</span><span class="x">×</span><span>ラインエイド</span><span class="x">×</span><span>グラムエイド</span><span class="x">×</span><span>ウェブエイド</span><span class="x">×</span><span>スモールエイド</span><span class="x">×</span><span>ビズエイド</span><span class="x">×</span><span>現場で動く</span><span class="x">×</span><span>一緒に伴走</span><span class="x">×</span>
+    <span>マップエイド</span><span class="x">×</span><span>ラインエイド</span><span class="x">×</span><span>グラムエイド</span><span class="x">×</span><span>ウェブエイド</span><span class="x">×</span><span>スモールエイド</span><span class="x">×</span><span>ビズエイド</span><span class="x">×</span><span>現場で動く</span><span class="x">×</span><span>一緒に伴走</span><span class="x">×</span>
   </div>
-  <div class="fp">© 2025 株式会社 Aid &amp; Aide</div>
+</div>
+<footer>
+  <div class="fl">AID<span class="fl-r">&</span>AIDE <span style="font-family:'Noto Sans JP';font-size:11px;color:#444;font-weight:400;letter-spacing:1px">株式会社 Aid &amp; Aide</span></div>
+  <div class="fc">© 2025-2026 Aid &amp; Aide Co., Ltd. All rights reserved.</div>
 </footer>
-
 <script>
-// 次回LLMO計測まであと何日かを計算して表示
+// 次回LLMO計測まであと何日かを計算
 (function(){
-  const today = new Date();
-  const d = today.getDate();
-  let next;
+  var today = new Date();
+  var d = today.getDate();
+  var next;
   if(d < 15){
     next = new Date(today.getFullYear(), today.getMonth(), 15);
   } else {
-    const m = today.getMonth() + 1;
+    var m = today.getMonth() + 1;
     if(m > 11){ next = new Date(today.getFullYear()+1, 0, 1); }
     else { next = new Date(today.getFullYear(), m, 1); }
   }
-  const diff = Math.ceil((next - today) / (1000*60*60*24));
-  const el = document.getElementById('llmo-days');
+  var diff = Math.ceil((next - today) / (1000*60*60*24));
+  var el = document.getElementById('llmo-days');
   if(el) el.textContent = diff;
 })();
-
-// スコアバーのアニメーション
-window.addEventListener('load', function(){
-  setTimeout(function(){
-    const bar = document.querySelector('.llmo-score-bar');
-    if(bar){ bar.style.width = bar.style.width; }
-  }, 300);
-});
 </script>
 </body>
 </html>
