@@ -3,135 +3,535 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-  <!-- SEO: タイトル・ディスクリプション -->
-  <title>ミッケ！— 変えるのは、人じゃない。組織が変わる伴走支援 | 株式会社 Aid & Aide</title>
-  <meta name="description" content="社長と従業員の間に立つ伴走支援「ミッケ！」。現場に入り、育て、専用ツールを作る。変えるのは人じゃない、組織だ。月99,000円〜。初回相談完全無料。">
+  <title>ミッケ！— 変えるのは、人じゃない。伴走支援 | 株式会社 Aid & Aide</title>
+  <meta name="description" content="社長と従業員の間に立つ伴走支援「ミッケ！」。現場に入り、育て、専用ツールを作る。変えるのは人じゃない、組織だ。月99,000円〜。初回相談完全無料・約60分。">
   <meta name="robots" content="index, follow">
   <link rel="canonical" href="https://aidandaide.com/">
-
-  <!-- OGP -->
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://aidandaide.com/">
   <meta property="og:title" content="ミッケ！— 変えるのは、人じゃない。| 株式会社 Aid & Aide">
-  <meta property="og:description" content="社長と従業員の間に立つ伴走支援。現場に入り、育て、専用ツールを作る。変えるのは組織だ。">
+  <meta property="og:description" content="社長と従業員の間に立つ伴走支援。現場で動き、育て、専用ツールを作る。変えるのは組織だ。">
   <meta property="og:site_name" content="株式会社 Aid & Aide">
 
-  <!-- 構造化データ: LocalBusiness -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
-    "@type": "LocalBusiness",
+    "@type": "ProfessionalService",
     "name": "株式会社 Aid & Aide",
     "alternateName": "ミッケ！",
     "url": "https://aidandaide.com/",
     "email": "fukushima@aidandaide.com",
-    "description": "社長と従業員の溝に立ち、現場で動く伴走支援サービス「ミッケ！」を提供。拾う・育てる・見せる・作るの4つの動きで、組織が変わる仕組みをつくります。",
-    "founder": {
-      "@type": "Person",
-      "name": "福嶋 彬人",
-      "jobTitle": "代表取締役 CEO"
-    },
-    "offers": {
-      "@type": "Offer",
-      "name": "ミッケ！伴走プラン",
-      "priceCurrency": "JPY",
-      "priceSpecification": {
-        "@type": "PriceSpecification",
-        "price": "99000",
-        "priceCurrency": "JPY",
-        "billingDuration": "P1M"
-      }
-    }
+    "description": "社長と従業員の溝に立ち、現場で動く伴走支援サービス「ミッケ！」。拾う・育てる・見せる・作るの4つの動きで、変えるのは組織。",
+    "founder": { "@type": "Person", "name": "福嶋 彬人", "jobTitle": "代表取締役 CEO" },
+    "priceRange": "¥19,800〜¥500,000/月"
   }
   </script>
 
-  <!-- フォント -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
-
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-  <!-- NAV -->
-  <nav class="nav" role="navigation" aria-label="メインナビゲーション">
-    <div class="nav-inner">
-      <a href="/" class="nav-logo" aria-label="Aid &amp; Aide トップページ">
-        <span class="nav-logo-main">Aid &amp; Aide</span>
-        <span class="nav-logo-sub">MIKKE!</span>
-      </a>
-      <div class="nav-links">
-        <a href="#about">ミッケ！とは</a>
-        <a href="#moves">4つの動き</a>
-        <a href="#plans">料金プラン</a>
-        <a href="#results">事例</a>
-        <a href="#team">AKITOについて</a>
-        <a href="#contact" class="nav-cta">無料相談</a>
+<!-- ── NAV ─────────────────────────────────────────── -->
+<nav class="nav" role="navigation" aria-label="メインナビゲーション">
+  <div class="nav-inner">
+    <a href="/" class="nav-logo" aria-label="Aid & Aide トップ">
+      <span class="nav-logo-main">Aid &amp; Aide</span>
+      <span class="nav-logo-sub">MIKKE!</span>
+    </a>
+    <div class="nav-links">
+      <a href="#why">なぜ変えないのか</a>
+      <a href="#moves">4つの動き</a>
+      <a href="#plans">料金プラン</a>
+      <a href="#results">事例</a>
+      <a href="#team">AKITOについて</a>
+      <a href="#contact" class="nav-cta">無料相談</a>
+    </div>
+    <button class="nav-hamburger" aria-label="メニュー" onclick="document.querySelector('.nav-links').classList.toggle('open')">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<!-- ══════════════════════════════════════════════════ -->
+<!-- SECTION 1: HERO                                    -->
+<!-- ══════════════════════════════════════════════════ -->
+<section class="hero" aria-labelledby="hero-heading">
+  <div class="hero-inner">
+    <span class="sh-label">ミッケ！— Aid &amp; Aide</span>
+    <h1 class="hero-h1" id="hero-heading">
+      <span class="line">変えるのは、</span>
+      <span class="line line-red">人じゃない。</span>
+      <span class="line">人は伸ばして活かす。</span>
+      <span class="line">変えるのは、組織だ。</span>
+    </h1>
+    <p class="hero-tagline">
+      社長の正義と、従業員の正義は、違う。<br>
+      ミッケ!は、その間に立ちます。
+    </p>
+    <a href="#contact" class="btn">無料相談する</a>
+    <span class="btn-note">初回相談 / 完全無料 / 約60分</span>
+  </div>
+</section>
+
+<!-- SECOND VIEW -->
+<section class="second-view" aria-label="ミッケ！のコンセプト">
+  <div class="sv-inner">
+    <p class="sv-catch">伴走。現場。<br>困りごとは、なんでもする。</p>
+    <p class="sv-imagine">
+      想像してください。<br>
+      従業員が、何も変わらないままで、<br>
+      会社が回る朝を。
+    </p>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════════ -->
+<!-- SECTION 2: なぜ「人を変えない」のか                -->
+<!-- ══════════════════════════════════════════════════ -->
+<section id="why" class="sec" aria-labelledby="why-heading">
+  <div class="container">
+    <div class="sh">
+      <span class="sh-label">Philosophy</span>
+      <span class="sh-big">WHY NOT CHANGE PEOPLE.</span>
+    </div>
+
+    <div class="why-grid">
+      <!-- BEFORE -->
+      <div class="why-col why-before">
+        <div class="why-col-head">
+          <span class="why-tag why-tag-before">Before</span>
+          <p class="why-col-title">朝、出社する車の中で<br>考えてること。</p>
+        </div>
+        <ul class="why-list">
+          <li>「今日、また現場で何かトラブってないかな」</li>
+          <li>「あのスタッフ、また辞めるって言わないかな」</li>
+          <li>「経理の確認、いつやろう」</li>
+          <li>「自分の代わりがいない」</li>
+        </ul>
+      </div>
+
+      <!-- TRUTH -->
+      <div class="why-col why-truth">
+        <p class="why-truth-label">真実</p>
+        <p class="why-truth-body">
+          従業員は本心では、<br>変化を求めていない。<br><br>
+          楽して稼ぎたい、それが彼らの正義。<br>
+          社長は売上120%にしないと死ぬ、それが社長の正義。<br><br>
+          <strong>両方、当然の主張。両方、悪くない。</strong>
+        </p>
+      </div>
+
+      <!-- AFTER -->
+      <div class="why-col why-after">
+        <div class="why-col-head">
+          <span class="why-tag why-tag-after">After</span>
+          <p class="why-col-title">ミッケ!と契約後の朝。</p>
+        </div>
+        <ul class="why-list why-list-after">
+          <li>「今日は午後に経営会議。AKITOが資料まとめてくれてる」</li>
+          <li>「あのトラブル、AKITOが現場で対応してくれた」</li>
+          <li>「ナンバー2、最近笑顔が増えた。重荷、降りたみたい」</li>
+          <li>「妻と娘と、晩ご飯ゆっくり食べられる時間ができた」</li>
+        </ul>
       </div>
     </div>
-  </nav>
 
-  <!-- ═══════════════════════════════════════════════════ -->
-  <!-- SECTION 1: HERO                                     -->
-  <!-- ═══════════════════════════════════════════════════ -->
-  <section class="hero" aria-labelledby="hero-heading">
-    <div class="hero-inner">
-      <span class="hero-label">ミッケ！— Aid &amp; Aide</span>
+    <p class="why-em">ミッケ!は、変える役を<br>社長から引き受ける仕事です。</p>
+  </div>
+</section>
 
-      <h1 class="hero-h1" id="hero-heading">
-        <span class="line">変えるのは、</span>
-        <span class="line line-red">人じゃない。</span>
-        <span class="line">人は伸ばして活かす。</span>
-        <span class="line">変えるのは、組織だ。</span>
-      </h1>
-
-      <p class="hero-tagline">
-        社長の正義と、従業員の正義は、違う。<br>
-        ミッケ!は、その間に立ちます。
-      </p>
-
-      <a href="#contact" class="hero-btn">無料相談する</a>
-      <span class="hero-note">初回相談 / 完全無料 / 約60分</span>
+<!-- ══════════════════════════════════════════════════ -->
+<!-- SECTION 3: ミッケ!の4つの動き                     -->
+<!-- ══════════════════════════════════════════════════ -->
+<section id="moves" class="sec sec-dark" aria-labelledby="moves-heading">
+  <div class="container">
+    <div class="sh sh-light">
+      <span class="sh-label">How We Work</span>
+      <span class="sh-big">4 MOVES.</span>
     </div>
-  </section>
+    <p class="moves-intro">誰もやらないボールを、ミッケて拾う。一人で背負っている人の、もう一人になる。</p>
 
-  <!-- SECOND VIEW -->
-  <section class="second-view" aria-label="ミッケ！のコンセプト">
-    <div class="sv-inner">
-      <p class="sv-catch">
-        伴走。現場。<br>
-        困りごとは、なんでもする。
-      </p>
-      <p class="sv-imagine">
-        想像してください。<br>
-        従業員が、何も変わらないままで、<br>
-        会社が回る朝を。
-      </p>
+    <div class="moves-grid">
+      <div class="move-card">
+        <div class="move-n">01</div>
+        <div class="move-verb">拾う</div>
+        <div class="move-verb-en">Pick</div>
+        <p class="move-desc">誰もやらないボールを拾う。「これ、誰の仕事ですか?」と聞かれたら「私がやります」と答える。それがミッケ!の起点。</p>
+      </div>
+      <div class="move-card">
+        <div class="move-n">02</div>
+        <div class="move-verb">育てる</div>
+        <div class="move-verb-en">Grow</div>
+        <p class="move-desc">育てる役を、社長から引き受ける。「なんでできないんだ」と言う前に、AKITOが横に立って一緒にやる。</p>
+      </div>
+      <div class="move-card">
+        <div class="move-n">03</div>
+        <div class="move-verb">見せる</div>
+        <div class="move-verb-en">Show</div>
+        <p class="move-desc">自ら現場で手本を見せる。口だけのコンサルではない。営業同行・接客実演・会議進行——AKITOが動く。</p>
+      </div>
+      <div class="move-card">
+        <div class="move-n">04</div>
+        <div class="move-verb">作る</div>
+        <div class="move-verb-en">Build</div>
+        <p class="move-desc">Claude Codeで専用ツールを作る。汎用SaaSではなく、あなたの会社専用の仕組みを。現場で使えるまで一緒に動かす。</p>
+      </div>
     </div>
-  </section>
+  </div>
+</section>
 
-  <!-- ═══════════════════════════════════════════════════ -->
-  <!-- SECTION 2〜8: 実装予定（確認後に順次追加）          -->
-  <!-- ═══════════════════════════════════════════════════ -->
+<!-- ══════════════════════════════════════════════════ -->
+<!-- SECTION 4: AKITOについて                          -->
+<!-- ══════════════════════════════════════════════════ -->
+<section id="team" class="sec" aria-labelledby="team-heading">
+  <div class="container">
+    <div class="sh">
+      <span class="sh-label">Team</span>
+      <span class="sh-big">TEAM.</span>
+    </div>
+    <div class="team-grid">
+      <div class="team-photo-wrap">
+        <img src="images/akito.png" alt="福嶋 彬人 — 代表取締役 CEO" class="team-photo" width="480" height="480" loading="lazy">
+      </div>
+      <div class="team-bio-wrap">
+        <div class="team-role">Representative / CEO</div>
+        <div class="team-name-en" id="team-heading">FUKUSHIMA<br>AKITO</div>
+        <div class="team-name-jp">福嶋 彬人</div>
+        <div class="team-divider"></div>
+        <p class="team-bio">
+          1983年生まれ。BtoC・BtoB問わず、営業・店舗運営・組織改善の現場に10年にわたって入り続け、延べ53社の経営支援を実施。大手企業では研修講師として3,000名以上への指導実績も持つ。<br><br>
+          現在も2店舗の経営者として自ら現場に立ちながら、実務伴走支援を行う。「机上の空論が嫌い」という信念のもと、答えを渡すだけでなく一緒に動くことにこだわり続ける。
+        </p>
+        <ul class="team-facts">
+          <li>NTT系代理店業務委託で10年・53社の伴走経験</li>
+          <li>ほっともっとFCオーナー（2店舗運営）</li>
+          <li>不動産売却支援（ワイズワンホーム・BAISAPO）現役</li>
+          <li>Claude Codeによる専用ツール開発</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
 
-  <section id="about" class="placeholder">Section 2: なぜ「人を変えない」のか（実装予定）</section>
-  <section id="moves" class="placeholder">Section 3: ミッケ!の4つの動き（実装予定）</section>
-  <section id="team" class="placeholder">Section 4: AKITOの自己紹介（実装予定）</section>
-  <section id="results" class="placeholder">Section 5: 事例（実装予定）</section>
-  <section id="comparison" class="placeholder">Section 6: 競合比較・料金比較（実装予定）</section>
-  <section id="plans" class="placeholder">Section 7: 料金プラン（実装予定）</section>
-  <section id="contact" class="placeholder">Section 8: お問い合わせ（実装予定）</section>
+<!-- ══════════════════════════════════════════════════ -->
+<!-- SECTION 5: 事例                                   -->
+<!-- ══════════════════════════════════════════════════ -->
+<section id="results" class="sec sec-dark" aria-labelledby="results-heading">
+  <div class="container">
+    <div class="sh sh-light">
+      <span class="sh-label">Results</span>
+      <span class="sh-big" id="results-heading">RESULTS.</span>
+    </div>
+    <div class="cases-grid">
+      <article class="case-card">
+        <div class="case-move">拾う</div>
+        <div class="case-industry">製造業 / 家族経営</div>
+        <h3 class="case-title">現場に転がっていたボールを全部拾ったら、社長が社長の仕事に集中できた。</h3>
+        <p class="case-body">準備中 — 実際の事例に差し替えます。</p>
+      </article>
+      <article class="case-card">
+        <div class="case-move">育てる</div>
+        <div class="case-industry">小売 / 店舗運営</div>
+        <h3 class="case-title">スタッフに「変われ」と言うのをやめた日から、店が変わり始めた。</h3>
+        <p class="case-body">準備中 — 実際の事例に差し替えます。</p>
+      </article>
+      <article class="case-card">
+        <div class="case-move">見せる</div>
+        <div class="case-industry">サービス業 / 地域密着</div>
+        <h3 class="case-title">AKITOが営業に同行した翌週、ナンバー2が自分で動き出した。</h3>
+        <p class="case-body">準備中 — 実際の事例に差し替えます。</p>
+      </article>
+      <article class="case-card">
+        <div class="case-move">作る</div>
+        <div class="case-industry">専門職 / 個人事務所</div>
+        <h3 class="case-title">「SaaSを入れても誰も使わない」を解決したのは、専用ツールだった。</h3>
+        <p class="case-body">準備中 — 実際の事例に差し替えます。</p>
+      </article>
+    </div>
+  </div>
+</section>
 
-  <!-- FOOTER -->
-  <footer class="footer" role="contentinfo">
-    <div class="footer-inner">
+<!-- ══════════════════════════════════════════════════ -->
+<!-- SECTION 6: 競合比較                               -->
+<!-- ══════════════════════════════════════════════════ -->
+<section id="comparison" class="sec" aria-labelledby="comparison-heading">
+  <div class="container">
+    <div class="sh">
+      <span class="sh-label">Positioning</span>
+      <span class="sh-big" id="comparison-heading">WHERE WE STAND.</span>
+    </div>
+
+    <div class="position-map" aria-label="立ち位置マップ">
+      <div class="pos-axis-h">
+        <span class="pos-axis-label">人間主役</span>
+        <div class="pos-axis-line"></div>
+        <span class="pos-axis-label">ツール主役</span>
+      </div>
+      <div class="pos-items">
+        <div class="pos-item pos-left">
+          <span class="pos-name">経営コンサルタント</span>
+          <span class="pos-desc">「変えろと説教する」</span>
+        </div>
+        <div class="pos-item pos-center">
+          <span class="pos-name pos-name-mikke">ミッケ！</span>
+          <span class="pos-desc">「両方の正義を支える」</span>
+        </div>
+        <div class="pos-item pos-right">
+          <span class="pos-name">SaaSツール</span>
+          <span class="pos-desc">「機能で売る」</span>
+        </div>
+      </div>
+      <p class="pos-tagline">「変わらないまま、回る」—— 唯一の存在。</p>
+    </div>
+
+    <div class="comp-table-wrap">
+      <table class="comp-table">
+        <caption class="comp-caption">SaaSと同じ金額で、人が来てくれる。</caption>
+        <thead>
+          <tr>
+            <th></th>
+            <th>月額</th>
+            <th>現場入り</th>
+            <th>専用ツール</th>
+            <th>伴走時間</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>営業支援系SaaS（中堅）</td>
+            <td>48,000円</td>
+            <td class="comp-x">✗</td>
+            <td class="comp-x">✗</td>
+            <td class="comp-x">✗</td>
+          </tr>
+          <tr>
+            <td>営業支援系SaaS（上位）</td>
+            <td>99,000円</td>
+            <td class="comp-x">✗</td>
+            <td class="comp-x">✗</td>
+            <td class="comp-x">✗</td>
+          </tr>
+          <tr>
+            <td>業務改善系SaaS</td>
+            <td>18,000円</td>
+            <td class="comp-x">✗</td>
+            <td class="comp-tri">△ 別費用</td>
+            <td class="comp-x">✗</td>
+          </tr>
+          <tr>
+            <td>集客特化型SaaS</td>
+            <td>数万円</td>
+            <td class="comp-x">✗</td>
+            <td class="comp-x">✗</td>
+            <td class="comp-tri">△</td>
+          </tr>
+          <tr>
+            <td>経営コンサルタント</td>
+            <td>300,000円〜</td>
+            <td class="comp-tri">△</td>
+            <td class="comp-x">✗</td>
+            <td class="comp-o">◯</td>
+          </tr>
+          <tr class="comp-row-mikke">
+            <td><strong>ミッケ！松（本命）</strong></td>
+            <td><strong>99,000円</strong></td>
+            <td class="comp-best">◎</td>
+            <td class="comp-best">◎</td>
+            <td class="comp-best">◎</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════════ -->
+<!-- SECTION 7: 料金プラン                             -->
+<!-- ══════════════════════════════════════════════════ -->
+<section id="plans" class="sec sec-plans" aria-labelledby="plans-heading">
+  <div class="container">
+    <div class="sh">
+      <span class="sh-label">Pricing</span>
+      <span class="sh-big" id="plans-heading">PLANS.</span>
+    </div>
+
+    <div class="plans-grid">
+
+      <!-- 梅 -->
+      <div class="plan-card">
+        <div class="plan-grade">梅</div>
+        <div class="plan-name">ミッケ！ライト</div>
+        <div class="plan-price">¥<span class="plan-num">19,800</span><span class="plan-unit">/月（税別）</span></div>
+        <div class="plan-hours">AKITO稼働: 月3時間まで</div>
+        <ul class="plan-list">
+          <li>月1回オンライン面談（60分）</li>
+          <li>月次レポート</li>
+          <li>チャット相談（平日24時間以内、月10件まで）</li>
+        </ul>
+        <p class="plan-for">「相談相手が欲しい」社長へ</p>
+        <a href="#contact" class="plan-btn">相談する</a>
+      </div>
+
+      <!-- 竹 -->
+      <div class="plan-card">
+        <div class="plan-grade">竹</div>
+        <div class="plan-name">ミッケ！ベーシック</div>
+        <div class="plan-price">¥<span class="plan-num">49,800</span><span class="plan-unit">/月（税別）</span></div>
+        <div class="plan-hours">AKITO稼働: 月8時間まで</div>
+        <ul class="plan-list">
+          <li>月2回面談</li>
+          <li>月1回まで現場入り（半日）</li>
+          <li>軽微な専用ツール開発（月3時間以内）</li>
+          <li>チャット相談（月20件まで）</li>
+          <li>月次レポート</li>
+        </ul>
+        <p class="plan-for">「現場も見てほしい、軽めで」社長へ</p>
+        <a href="#contact" class="plan-btn">相談する</a>
+      </div>
+
+      <!-- 松（本命） -->
+      <div class="plan-card plan-card-main">
+        <div class="plan-badge">本命</div>
+        <div class="plan-grade">松</div>
+        <div class="plan-name">ミッケ！伴走</div>
+        <div class="plan-price">¥<span class="plan-num">99,000</span><span class="plan-unit">/月（税別）</span></div>
+        <div class="plan-hours">AKITO稼働: 月20時間まで / 同時5社まで</div>
+        <ul class="plan-list">
+          <li>月2回面談</li>
+          <li>月2回まで現場入り（各半日〜1日）</li>
+          <li>月1回の経営会議参加</li>
+          <li>スタッフ育成（現場での同行・指導）</li>
+          <li>現場での手本実演（営業同行・接客実演）</li>
+          <li>専用ツール開発（月10時間まで）</li>
+          <li>チャット相談（平日24時間以内返信）</li>
+          <li>月次経営レビュー + 月次レポート</li>
+        </ul>
+        <p class="plan-for">「ガッツリ伴走してほしい」社長へ</p>
+        <a href="#contact" class="plan-btn plan-btn-main">相談する</a>
+      </div>
+
+      <!-- プレミアム -->
+      <div class="plan-card">
+        <div class="plan-grade plan-grade-premium">プレミアム</div>
+        <div class="plan-name">ミッケ！パートナー</div>
+        <div class="plan-price">¥<span class="plan-num">500,000</span><span class="plan-unit">〜/月（税別）</span></div>
+        <div class="plan-hours">AKITO稼働: 月60時間まで / 同時2社まで</div>
+        <ul class="plan-list">
+          <li>週次伴走（月8回まで現場入り）</li>
+          <li>経営会議への定期参加</li>
+          <li>経営戦略・中長期計画への伴走</li>
+          <li>大規模な専用ツール開発（月30時間まで）</li>
+          <li>複数スタッフへの育成・同行</li>
+          <li>緊急時の即時対応（平日2時間以内）</li>
+        </ul>
+        <p class="plan-for">「右腕として常駐に近い形で欲しい」社長へ</p>
+        <a href="#contact" class="plan-btn">相談する</a>
+      </div>
+
+    </div>
+
+    <!-- スポット -->
+    <div class="spot-wrap">
+      <div class="spot-card">
+        <div class="spot-label">スポット</div>
+        <div class="spot-name">ミッケ！お試し<span class="spot-unit"> / 1日伴走</span></div>
+        <div class="spot-price">¥50,000<span class="spot-price-unit">（税別）/ 日</span></div>
+        <ul class="spot-list">
+          <li>半日 or 1日の現場入り</li>
+          <li>現場診断レポート（後日提出）</li>
+          <li>課題抽出と次の動きの提案</li>
+        </ul>
+        <a href="#contact" class="plan-btn">まずスポット1日から</a>
+      </div>
+    </div>
+
+    <!-- 共通事項 -->
+    <div class="plan-common">
+      <p class="plan-common-title">共通事項</p>
+      <ul class="plan-common-list">
+        <li>入会金: 50,000円</li>
+        <li>契約期間: 6ヶ月〜</li>
+        <li>緊急対応: 別途日当 50,000円</li>
+        <li>初動訪問: 契約後1回無料</li>
+      </ul>
+    </div>
+
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════════ -->
+<!-- SECTION 8: お問い合わせ                           -->
+<!-- ══════════════════════════════════════════════════ -->
+<section id="contact" class="sec" aria-labelledby="contact-heading">
+  <div class="container container-narrow">
+    <div class="sh">
+      <span class="sh-label">Contact</span>
+      <span class="sh-big" id="contact-heading">CONTACT.</span>
+    </div>
+    <h2 class="contact-title">まず、話しましょう。</h2>
+    <p class="contact-note">初回相談は完全無料・約60分。今困っていることを聞かせてください。</p>
+
+    <form class="form-grid" action="https://formspree.io/f/YOUR_FORM_ID" method="POST" id="contact-form">
+      <input type="hidden" name="_replyto" value="fukushima@aidandaide.com">
+      <input type="hidden" name="_subject" value="【ミッケ！】無料相談のお申し込み">
+
+      <div class="fg"><label for="name">お名前 *</label><input type="text" id="name" name="name" placeholder="山田 太郎" required></div>
+      <div class="fg"><label for="company">会社名・屋号</label><input type="text" id="company" name="company" placeholder="〇〇商店"></div>
+      <div class="fg"><label for="email">メールアドレス *</label><input type="email" id="email" name="email" placeholder="info@example.com" required></div>
+      <div class="fg"><label for="tel">電話番号</label><input type="tel" id="tel" name="tel" placeholder="090-0000-0000"></div>
+      <div class="fg fg-full">
+        <label for="plan">気になるプラン</label>
+        <select id="plan" name="plan">
+          <option value="">選択してください</option>
+          <option>ミッケ！ライト（梅）19,800円/月</option>
+          <option>ミッケ！ベーシック（竹）49,800円/月</option>
+          <option>ミッケ！伴走（松）99,000円/月</option>
+          <option>ミッケ！パートナー（プレミアム）500,000円〜/月</option>
+          <option>ミッケ！お試し（スポット1日）50,000円</option>
+          <option>まだわからない / まず相談したい</option>
+        </select>
+      </div>
+      <div class="fg fg-full">
+        <label for="message">お悩み・ご相談内容</label>
+        <textarea id="message" name="message" rows="5" placeholder="今一番困っていることを教えてください。"></textarea>
+      </div>
+      <div class="fg fg-full">
+        <button type="submit" class="form-btn">相談する →</button>
+        <p class="form-note">送信後、fukushima@aidandaide.com よりご連絡いたします。</p>
+      </div>
+    </form>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════════ -->
+<!-- CTA BAND                                          -->
+<!-- ══════════════════════════════════════════════════ -->
+<section class="cta-band" aria-label="最終CTA">
+  <div class="cta-band-inner">
+    <div>
+      <p class="cta-band-big">TALK<br>TO US.</p>
+      <p class="cta-band-sub">難しいことは何もありません。<br>今困っていることを聞かせてください。</p>
+    </div>
+    <div class="cta-band-action">
+      <a href="#contact" class="cta-band-btn">無料相談を申し込む →</a>
+      <p class="cta-band-note">初回相談 完全無料 / 約60分</p>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer" role="contentinfo">
+  <div class="footer-inner">
+    <div>
       <span class="footer-brand">Aid &amp; Aide</span>
       <span class="footer-tagline">AIに選ばれる会社をつくる。</span>
-      <span class="footer-copy">&copy; 2025-2026 Aid &amp; Aide Co., Ltd. All rights reserved.</span>
     </div>
-  </footer>
+    <span class="footer-copy">&copy; 2025-2026 Aid &amp; Aide Co., Ltd. All rights reserved.</span>
+  </div>
+</footer>
 
 </body>
 </html>
