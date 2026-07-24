@@ -107,6 +107,8 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;height:68px;background:rgba(
 .case-item{display:grid;grid-template-columns:280px 1fr;border-bottom:1px solid var(--faint)}
 .case-item:last-child{border-bottom:none}
 .case-meta{padding:40px 36px;border-right:1px solid var(--faint);display:flex;flex-direction:column;gap:12px;background:#fafafa}
+.case-photo{width:100%;aspect-ratio:4/3;overflow:hidden;border:1px solid var(--faint)}
+.case-photo img{width:100%;height:100%;object-fit:cover;display:block}
 .case-n{font:500 10px/1 'Poppins',sans-serif;letter-spacing:3px;text-transform:uppercase;color:var(--mid);display:flex;align-items:center;gap:8px}
 .case-n::before{content:'';width:16px;height:1px;background:var(--blue)}
 .case-svc{font:700 16px/1.3 'Poppins',sans-serif;color:var(--blue)}
@@ -564,6 +566,7 @@ footer{background:var(--ink);padding:32px 56px;display:flex;justify-content:spac
 
       <div class="case-item">
         <div class="case-meta">
+          <div class="case-photo"><img src="images/case-craftsman.jpg" alt="工務店の職人が作業する様子"></div>
           <div class="case-n">Case 03</div>
           <div class="case-svc">集客支援ミッケ！UGC</div>
           <div class="case-ind">工務店 / 地域密着型</div>
@@ -604,6 +607,7 @@ footer{background:var(--ink);padding:32px 56px;display:flex;justify-content:spac
 
       <div class="case-item">
         <div class="case-meta">
+          <div class="case-photo"><img src="images/case-bar-owner.jpg" alt="居酒屋の店主"></div>
           <div class="case-n">Case 05</div>
           <div class="case-svc">集客支援ミッケ！UGC</div>
           <div class="case-ind">飲食 / 居酒屋（個人事業主）</div>
