@@ -18,7 +18,7 @@
 - **efshiumai** (`C:\Users\aktfk\efshiumai`)・**mikke-ugc** (`C:\Users\aktfk\Documents\mikke-ugc`) はいずれも2026-07-31時点で本番データなし（デモ/開発段階）。既存Supabaseプロジェクトの中身は両方とも「消えても再現できるデータ」のみ：efshiumaiは`npm run seed`で再生成、mikke-ugcはアプリのUIから再作成する。
 - リポジトリ運用：3リポジトリとも、mainブランチに直接コミット・push（aidandaideは`[[feedback_push_always]]`の希望どおり。efshiumai・mikke-ugcも同様の運用と仮定し、各タスクごとにコミット・push、pushできない場合はその場でユーザーに確認する）。
 - **Task 1・Task 3・Task 5はSupabase管理画面／Studioでの操作を含み、SQL実行やプロジェクト作成はユーザー本人が行う。** エージェントが自動実行できない部分は明記している。
-- 旧Supabaseプロジェクト（efshiumai: `wtmkihghahtcqicaassu`、mikke-ugc: 各自の`.env.local`のURLで確認）は、Task 9で新プロジェクトでの動作確認が取れてからPause（一時停止）する。削除はしない。
+- 旧Supabaseプロジェクト（efshiumai: `wtmkihghahtcqicaassu`、mikke-ugc: 各自の`.env.local`のURLで確認）は、Task 9で新プロジェクトでの動作確認が取れてから削除する。**efshiumaiの旧プロジェクトはPro planと確認済み（2026-07-31、ユーザー確認）— Supabaseの仕様上Pro planは一時停止できないため、一時停止ではなく削除する方針**（データは`npm run seed`で再現可能なデモデータのみのため、削除のリスクは低いと判断）。mikke-ugcの旧プロジェクトのプラン（Free/Pro）は未確認のため、Task 9で確認しだい同様に判断する。
 
 ---
 
@@ -1023,7 +1023,7 @@ Run: `start index.html`（Windows）
 
 ---
 
-### Task 9: 全体の動作確認と旧プロジェクトの一時停止
+### Task 9: 全体の動作確認と旧プロジェクトの整理
 
 **Files:** なし（動作確認・Supabase管理画面での操作のみ）
 
@@ -1039,9 +1039,14 @@ Task 6 Step 9でVercelを再デプロイした後、mikke-ugcの本番URLでマ�
 
 GitHub Pagesへのpush後、https://aidandaide.com の問い合わせフォームから実際に送信し、Formspreeのメールが届くこと・Supabase Studioにレコードが保存されることを確認する。テストレコードは削除する。
 
-- [ ] **Step 4: 旧Supabaseプロジェクトを一時停止する（ユーザー作業）**
+- [ ] **Step 4: 旧Supabaseプロジェクトを整理する（ユーザー作業）**
 
-Step 1〜3がすべて確認できたら、efshiumaiの旧プロジェクト（`wtmkihghahtcqicaassu`）とmikke-ugcの旧プロジェクトをそれぞれのSupabaseダッシュボードからPauseする。削除はしない（しばらく様子を見てから、ユーザーの判断で別途削除する）。
+Step 1〜3がすべて確認できたら、旧プロジェクトを片付ける。手順はプランによって異なる（Supabase Settings → General → Project availability でプランを確認できる）：
+
+- **Pro plan**: 一時停止はできない仕様のため、Supabaseダッシュボードから直接削除する。efshiumaiの旧プロジェクト（`wtmkihghahtcqicaassu`）は2026-07-31時点でPro planと確認済みなので、これに該当する
+- **Free plan**: Settings → General → Project availability から Pause project して一時停止する（削除は別途、様子を見てからユーザーが判断する）
+
+mikke-ugcの旧プロジェクトはこのタスクの時点でプランを確認し、上記のいずれかで整理する。
 
 ---
 
@@ -1049,4 +1054,4 @@ Step 1〜3がすべて確認できたら、efshiumaiの旧プロジェクト（`
 
 - `public.staff_accounts`を使ったスタッフ向け管理画面（問い合わせ一覧閲覧、店舗横断ダッシュボードなど）の実装
 - efshiumaiのSupabase Auth移行（必要になった場合）
-- 旧Supabaseプロジェクトの削除判断
+- mikke-ugcの旧プロジェクトがFree planだった場合の、Pause後の削除判断
