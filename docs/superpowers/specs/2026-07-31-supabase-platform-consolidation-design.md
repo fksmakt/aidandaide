@@ -4,7 +4,7 @@
 
 Aid & Aideが提供する複数のAI支援ツール（efshiumai＝笑福シウマイ様向けシフト管理、mikke-ugc＝自社UGC収集SaaS、今後追加予定のツール）と自社サイトaidandaide.comは、それぞれ別々にSupabaseを利用・検討している状態だった。これらを1つのSupabaseプロジェクトに統合し、管理面（ダッシュボード、課金、監視）を一本化しつつ、ツールごとのデータ設計の違いを壊さない基盤を作る。
 
-これは[[project_aidandaide_mikke_ugc_renewal]]と同じ事業ファネル文脈（AI支援ツールを入口にビズエイド伴走支援へつなげる）の一部であり、今後増えるAIツール全般を乗せられる共通基盤として設計する。
+**位置づけ:** efshiumai・mikke-ugcは単なる別クライアント案件ではなく、**aidandaide.comが提供するサービスの一つ**（集客支援ミッケ！UGC／生成AIツール作成の実例）という位置づけである。これは[[project_aidandaide_mikke_ugc_renewal]]と同じ事業ファネル文脈（AI支援ツールを入口にビズエイド伴走支援へつなげる）そのものであり、今回のSupabase基盤統合は単なる技術的な整理ではなく、「aidandaide.comのサービス群」として運用を一体化する意味を持つ。今後増えるAIツール全般を乗せられる共通基盤として設計する。
 
 **きっかけ:** ユーザーが別ターミナルでsupabase CLIのログイン/リンク作業中にエラーに遭遇したことから相談が始まったが、そのエラー自体は本設計の完了時点で解決済み・無関係と確認済み。
 
@@ -12,15 +12,19 @@ Aid & Aideが提供する複数のAI支援ツール（efshiumai＝笑福シウ�
 
 | プロジェクト | 技術構成 | 認証方式 | データ設計 | 状態 |
 |---|---|---|---|---|
-| **efshiumai**<br>`C:\Users\aktfk\efshiumai` | Next.js 16 + Supabase | Supabase Auth**未使用**。PINログイン＋サーバー側service_roleキーのみ | テナント列なし（単一クライアント専用） | 本番稼働中・実データあり<br>Supabaseプロジェクト: `wtmkihghahtcqicaassu` |
-| **mikke-ugc**<br>`C:\Users\aktfk\Documents\mikke-ugc` | Next.js + Supabase | Supabase Auth使用。`auth.users` + `owner_id`でRLS制御する本格マルチテナント | マルチテナント | 本番稼働中・実ユーザーあり |
+| **efshiumai**<br>`C:\Users\aktfk\efshiumai` | Next.js 16 + Supabase | Supabase Auth**未使用**。PINログイン＋サーバー側service_roleキーのみ | テナント列なし（単一クライアント専用） | **デモ/開発段階、本番データなし**（Vercelにデプロイ済みだが実運用は未開始。スタッフPINは全員`1234`のデモ値、`scripts/seed.ts`で再生成可能なシードデータのみ）<br>Supabaseプロジェクト: `wtmkihghahtcqicaassu` |
+| **mikke-ugc**<br>`C:\Users\aktfk\Documents\mikke-ugc` | Next.js + Supabase | Supabase Auth使用。`auth.users` + `owner_id`でRLS制御する本格マルチテナント | マルチテナント | **デモ/開発段階、本番データなし**（2026-07-31時点でユーザー確認済み） |
 | **aidandaide.com**<br>`C:\Users\aktfk\aidandaide` | 静的HTML、GitHub Pages配信 | なし | 現状Formspreeで問い合わせ受付、Supabase未使用 | 本番稼働中 |
+
+（2026-07-30時点の調査メモでは誤ってefshiumai・mikke-ugcを「本番稼働中・実データあり」としていたが、2026-07-31にユーザーへ再確認した結果、両方ともまだ本番データを持たないデモ/開発段階と判明した。これにより下記スコープを変更している。）
 
 ## スコープ外
 
-- **既存本番データ（efshiumai・mikke-ugc）の実移行**は本設計の対象外。ダウンタイム・データ整合性リスクがあるため、別途移行計画として詳細に詰める
-- efshiumaiのSupabase Authへの移行（PINログインからの切り替え）は行わない。現行のPINログイン方式を維持する
 - Aid & Aideスタッフ向けの横断管理画面（問い合わせ一覧の閲覧など）の具体的な実装は対象外。土台となるテーブル設計のみ本設計に含める
+- efshiumaiのSupabase Authへの移行（PINログインからの切り替え）は行わない。現行のPINログイン方式を維持する
+- スキーマ隔離のPostgresロールベース強制隔離への移行（3.の通り現状は規約ベースで十分と判断）
+
+**含めることにした変更点:** efshiumai・mikke-ugcはいずれも本番データを持たないため、「実データ移行」ではなく「新規プロジェクトへのスキーマ再作成＋アプリの接続先切り替え＋デモデータ再投入」を今回のスコープに含める。ダウンタイム・データ整合性リスクは実質存在しない（両アプリともシードスクリプト/サインアップで再現可能なデータのみ）。旧プロジェクト（efshiumaiの`wtmkihghahtcqicaassu`、mikke-ugcの現行プロジェクト）は、新プロジェクトでの動作確認が完了し次第Pause（一時停止）し、削除は別途判断する。
 
 ## 設計方針
 
@@ -60,6 +64,11 @@ const supabase = createClient(url, serviceKey, { db: { schema: 'mikke_ugc' } })
 ```
 
 将来、ツール間のデータ独立性の要求が高まった場合（例：クライアントとの契約上の要件）は、Postgresロールベースの強制隔離への移行を再検討する。
+
+**スキーマごとのGRANT方針:** テーブルの権限設計はスキーマごとに、そのスキーマの実際のアクセスパターンに合わせる。
+- `site`: 新規・単純な用途のため最小権限（`anon`にINSERTのみ許可）
+- `efshiumai`: クライアント側からSupabaseに一切アクセスしないため、`anon`/`authenticated`には何も許可しない（service_roleのみアクセス可）
+- `mikke_ugc`: 既存アプリがRLSポリシー中心の権限モデル（`public`スキーマでのSupabaseデフォルトのGRANT + 詳細なRLSポリシーの組み合わせ）で設計されているため、新スキーマでも同じパターン（`anon`/`authenticated`に広めのGRANT＋RLSポリシーで実際の制御）を踏襲する。Supabase Storageの`review-photos`バケットはプロジェクト共通のグローバルリソースであり、スキーマの概念とは独立して新プロジェクトでもそのまま再作成する
 
 ### 4. 環境変数運用
 
@@ -113,6 +122,6 @@ RLSで「匿名ユーザーはINSERTのみ可・他操作は全て不可」に�
 ## 将来のスコープ（本設計に含めない）
 
 - 問い合わせ内容やツール横断データをAid & Aideスタッフが閲覧する管理画面（`staff_accounts`を使った認証が必要）
-- efshiumai・mikke-ugcの既存本番データの実移行計画
 - efshiumaiのSupabase Auth移行（必要になった場合）
 - スキーマ隔離のPostgresロールベース強制隔離への移行（必要になった場合）
+- efshiumai・mikke-ugcが将来実際に本番稼働を開始した後の、追加のバックアップ・監視体制の強化
