@@ -873,6 +873,32 @@ footer{background:var(--ink);padding:32px 56px;display:flex;justify-content:spac
 
 <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
 <script>
+const SUPABASE_URL = 'https://pbnqfgcehcaaeqphguyl.supabase.co';
+const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InBibnFmZ2NlaGNhYWVxcGhndXlsIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODU0NzcxODQsImV4cCI6MjEwMTA1MzE4NH0.5kui0P9wnOiZVWPMgNqDYd3a_2G2oGqsq94XXg25yoY';
+
+function sendInquiryToSupabase(formData){
+  const payload = {
+    name: formData.get('name'),
+    company: formData.get('company') || null,
+    email: formData.get('email'),
+    tel: formData.get('tel') || null,
+    industry: formData.get('industry') || null,
+    interest: formData.get('interest') || null,
+    message: formData.get('message') || null,
+  };
+  fetch(`${SUPABASE_URL}/rest/v1/inquiries`, {
+    method: 'POST',
+    headers: {
+      apikey: SUPABASE_ANON_KEY,
+      Authorization: `Bearer ${SUPABASE_ANON_KEY}`,
+      'Content-Type': 'application/json',
+      'Content-Profile': 'site',
+      Prefer: 'return=minimal',
+    },
+    body: JSON.stringify(payload),
+  }).catch(err => console.error('Supabaseへの問い合わせ保存に失敗しました（Formspree送信には影響しません）', err));
+}
+
 const form = document.getElementById('contact-form');
 if(form){
   form.addEventListener('submit', async function(e){
@@ -888,8 +914,10 @@ if(form){
     }
     btn.textContent = '送信中...';
     btn.disabled = true;
+    const formData = new FormData(form);
+    sendInquiryToSupabase(formData);
     try{
-      const res = await fetch(form.action,{method:'POST',body:new FormData(form),headers:{Accept:'application/json'}});
+      const res = await fetch(form.action,{method:'POST',body:formData,headers:{Accept:'application/json'}});
       if(res.ok){
         btn.textContent = '送信しました ✓';
         btn.style.background = '#1a6b3c';
